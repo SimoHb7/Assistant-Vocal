@@ -364,6 +364,13 @@
         // Load data on page load
         window.addEventListener('DOMContentLoaded', () => {
             loadDashboardData();
+
+            // Check for section parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const section = urlParams.get('section');
+            if (section) {
+                showSection(section);
+            }
         });
         
         // Section navigation
