@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title>Test</title></head>
+<body>
+<script>
+async function testRequest() {
+    const query = "كيف أوفر المال";
+    const language = "ar";
+    
+    console.log("Sending:", { query, language });
+    
+    const response = await fetch("http://localhost:8080/api/conseil", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify({ query, language })
+    });
+    
+    const text = await response.text();
+    console.log("Response:", text);
+    document.body.innerHTML = "<pre>" + text + "</pre>";
+}
+testRequest();
+</script>
+</body>
+</html>

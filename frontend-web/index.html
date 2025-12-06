@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant Financier Vocal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">💰</span>
+                <h1 class="logo-text" id="title">Assistant Financier</h1>
+            </div>
+            <div class="language-selector">
+                <select id="languageSelect" class="language-dropdown">
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Subtitle -->
+        <p class="subtitle" id="subtitle">Votre conseiller vocal intelligent</p>
+
+        <!-- Conversation Area -->
+        <div class="conversation-card">
+            <h2 class="section-title" id="conversationTitle">Conversation</h2>
+            
+            <div class="conversation-area" id="conversationArea">
+                <div class="welcome-message" id="welcomeMessage">
+                    <span class="welcome-icon">👋</span>
+                    <p id="welcomeText">Comment puis-je vous aider?</p>
+                    <p class="welcome-subtext" id="welcomeSubtext">Parlez ou tapez votre question financière</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h3 class="section-title" id="quickActionsTitle">Actions rapides</h3>
+            <div class="action-buttons">
+                <button class="action-btn loan-btn" onclick="quickAction('loan')">
+                    <span class="btn-icon">🏦</span>
+                    <span id="loanBtn">Prêt</span>
+                </button>
+                <button class="action-btn savings-btn" onclick="quickAction('savings')">
+                    <span class="btn-icon">💰</span>
+                    <span id="savingsBtn">Épargne</span>
+                </button>
+                <button class="action-btn budget-btn" onclick="quickAction('budget')">
+                    <span class="btn-icon">📊</span>
+                    <span id="budgetBtn">Budget</span>
+                </button>
+                <button class="action-btn invest-btn" onclick="quickAction('invest')">
+                    <span class="btn-icon">📈</span>
+                    <span id="investBtn">Investir</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Input Controls -->
+        <div class="input-controls">
+            <button class="control-btn mic-btn" id="micBtn" onclick="toggleVoiceInput()">
+                <span class="btn-icon" id="micIcon">🎤</span>
+                <span id="micLabel">Écouter</span>
+            </button>
+            <button class="control-btn type-btn" onclick="showTextInput()">
+                <span class="btn-icon">⌨️</span>
+                <span id="typeLabel">Taper</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Text Input Modal -->
+    <div id="textInputModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Tapez votre question</h3>
+            <textarea id="textInput" placeholder="" rows="4"></textarea>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel-btn" onclick="closeTextInput()">
+                    <span id="cancelBtn">Annuler</span>
+                </button>
+                <button class="modal-btn send-btn" onclick="sendTextInput()">
+                    <span id="sendBtn">Envoyer</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p id="loadingText">Traitement en cours...</p>
+    </div>
+
+    <script>
+        // Define getUserInfo stub if auth.js is not loaded (for standalone use)
+        if (typeof getUserInfo === 'undefined') {
+            function getUserInfo() {
+                const userStr = localStorage.getItem('user_info') || sessionStorage.getItem('user_info');
+                return userStr ? JSON.parse(userStr) : null;
+            }
+        }
+    </script>
+    <script src="translations.js"></script>
+    <script src="speech.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
