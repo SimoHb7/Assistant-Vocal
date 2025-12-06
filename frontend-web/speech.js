@@ -114,6 +114,13 @@ function stopListening() {
 function speak(text) {
     // Cancel any ongoing speech
     synthesis.cancel();
+
+    // Enable stop button
+    const stopBtn = document.getElementById('stopBtn');
+    if (stopBtn) {
+        stopBtn.disabled = false;
+        stopBtn.style.opacity = '1';
+    }
     
     // Clean text for Arabic - remove problematic content for TTS
     if (currentLanguage === 'ar') {
@@ -208,10 +215,22 @@ function speak(text) {
         // Handle errors
         utterance.onerror = (event) => {
             console.error('Speech synthesis error:', event);
+            // Disable stop button on error
+            const stopBtn = document.getElementById('stopBtn');
+            if (stopBtn) {
+                stopBtn.disabled = true;
+                stopBtn.style.opacity = '0.5';
+            }
         };
         
         utterance.onend = () => {
             console.log('Speech finished');
+            // Disable stop button
+            const stopBtn = document.getElementById('stopBtn');
+            if (stopBtn) {
+                stopBtn.disabled = true;
+                stopBtn.style.opacity = '0.5';
+            }
         };
         
         console.log('Speaking in', currentLanguage + ':', text.substring(0, 50) + '...');
@@ -222,4 +241,10 @@ function speak(text) {
 // Stop speaking
 function stopSpeaking() {
     synthesis.cancel();
+    // Disable stop button
+    const stopBtn = document.getElementById('stopBtn');
+    if (stopBtn) {
+        stopBtn.disabled = true;
+        stopBtn.style.opacity = '0.5';
+    }
 }
