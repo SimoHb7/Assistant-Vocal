@@ -8,5 +8,5 @@ COPY . .
 RUN flutter build web
 
 FROM nginx:alpine
-COPY --from=0 /app/build/web /usr/share/nginx/html
+COPY --from=0 /app/build/web/html /usr/share/nginx/html
 EXPOSE 80

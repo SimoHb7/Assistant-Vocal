@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversation History - Financial Assistant</title>
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .history-container {
             max-width: 1200px;
@@ -220,12 +221,68 @@
     </style>
 </head>
 <body>
-    <div class="history-container">
+  <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+          <div class="sidebar-header">
+              <i class="fas fa-coins"></i>
+              <h2>Assistant Financier</h2>
+          </div>
+
+          <div class="user-profile">
+              <div class="profile-avatar">
+                  <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="profile-info">
+                  <h3 id="userName">Chargement...</h3>
+                  <p id="userEmail">...</p>
+              </div>
+          </div>
+
+          <nav class="sidebar-nav">
+              <a href="#" class="nav-item" onclick="showSection('overview', this); return false;">
+                  <i class="fas fa-chart-line"></i>
+                  <span>Tableau de bord</span>
+              </a>
+              <a href="#" class="nav-item" onclick="showSection('assistant', this); return false;">
+                  <i class="fas fa-microphone"></i>
+                  <span>Assistant Vocal</span>
+              </a>
+              <a href="transactions.html" class="nav-item">
+                  <i class="fas fa-exchange-alt"></i>
+                  <span>Transactions</span>
+              </a>
+              <a href="#" class="nav-item active" onclick="showSection('history', this); return false;">
+                  <i class="fas fa-history"></i>
+                  <span>Historique</span>
+              </a>
+              <a href="settings.html" class="nav-item">
+                  <i class="fas fa-cog"></i>
+                  <span>Paramètres</span>
+              </a>
+              <a href="admin.html" class="nav-item" id="adminLink" style="display: none;">
+                  <i class="fas fa-user-shield"></i>
+                  <span>Admin Panel</span>
+              </a>
+              <a href="#" class="nav-item" onclick="handleLogout(); return false;">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Déconnexion</span>
+              </a>
+          </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+          <header class="content-header">
+              <h1 id="sectionTitle">Historique</h1>
+              <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </header>
+
+          <div class="history-container">
         <div class="history-header">
             <h1>📜 Conversation History</h1>
-            <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">
-                ← Back to Dashboard
-            </button>
         </div>
 
         <div class="filter-section">
@@ -272,18 +329,87 @@
                 <div class="spinner"></div>
                 <p>Loading conversations...</p>
             </div>
-        </div>
+            </div>
+        </main>
     </div>
 
     <script src="js/config.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/api.js"></script>
     <script>
+        // Check authentication
+        if (!requireAuth()) {
+            // Will redirect to login
+        }
+
+        // Load user info
+        const user = getUserInfo();
+        if (user) {
+            document.getElementById('userName').textContent = user.nom;
+            document.getElementById('userEmail').textContent = user.email;
+        }
+
+        // Section navigation
+        function showSection(sectionId, element) {
+            if (sectionId === 'overview') {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+            if (sectionId === 'assistant') {
+                window.location.href = 'dashboard.html#assistant';
+                return;
+            }
+            if (sectionId === 'history') {
+                // Already on history page
+                return;
+            }
+            // For other sections, redirect to dashboard
+            window.location.href = 'dashboard.html';
+        }
+
+        // Check if user is admin and show admin link
+        function checkAdminAccess() {
+            const userInfo = getUserInfo();
+            if (userInfo && userInfo.role === 'ADMIN') {
+                const adminLink = document.getElementById('adminLink');
+                if (adminLink) {
+                    adminLink.style.display = 'flex';
+                }
+            }
+        }
+
+        // Logout
+        function handleLogout() {
+            if (confirm('Êtes-vous sûr de vouloir vous déconnecter?')) {
+                logout();
+            }
+        }
+
+        // Mobile sidebar toggle
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', checkAdminAccess);
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            const sidebar = document.querySelector('.sidebar');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+
+            if (window.innerWidth <= 768 &&
+                !sidebar.contains(e.target) &&
+                !menuBtn.contains(e.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+    <script>
         let allConversations = [];
 
         async function loadConversations() {
             try {
-                requireAuth();
                 const token = getToken();
                 
                 const response = await fetch(`${API_BASE_URL}/api/conversations`, {
