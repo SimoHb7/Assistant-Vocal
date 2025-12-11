@@ -165,9 +165,9 @@ async function sendQueryToBackend(query) {
             
             // Show assistant message
             showMessage(responseText, 'assistant');
-            
-            // Speak the response
-            speak(responseText);
+
+            // Generate and play speech from server
+            generateAndPlaySpeech(responseText, currentLanguage);
         } else {
             const errorText = `Error: ${response.status} ${response.statusText}`;
             console.error(errorText);
@@ -179,5 +179,74 @@ async function sendQueryToBackend(query) {
         showMessage(t.errorConnection, 'assistant');
     } finally {
         showLoading(false);
+    }
+}
+
+// Generate and play speech using server-side TTS
+async function generateAndPlaySpeech(text, language) {
+    console.log('Generating speech for:', text.substring(0, 50) + '...');
+
+    try {
+        const response = await fetch('http://localhost:8080/api/tts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                text: text,
+                language: language
+            })
+        });
+
+        if (response.ok) {
+            const base64Audio = await response.text();
+            console.log('Received audio data, length:', base64Audio.length);
+
+            if (base64Audio === 'SERVER_TTS_FAILED') {
+                console.log('Server TTS failed, falling back to browser TTS');
+                speak(text);
+            } else {
+                // Convert base64 to audio and play
+                playBase64Audio(base64Audio);
+            }
+        } else {
+            console.error('TTS request failed:', response.status, response.statusText);
+            // Fallback to browser TTS if server TTS fails
+            console.log('Falling back to browser TTS');
+            speak(text);
+        }
+    } catch (error) {
+        console.error('TTS error:', error);
+        // Fallback to browser TTS
+        console.log('Falling back to browser TTS due to error');
+        speak(text);
+    }
+}
+
+// Play base64 encoded audio
+function playBase64Audio(base64Audio) {
+    try {
+        // Convert base64 to blob
+        const binaryString = atob(base64Audio);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+        }
+
+        const blob = new Blob([bytes], { type: 'audio/wav' });
+        const audioUrl = URL.createObjectURL(blob);
+
+        const audio = new Audio(audioUrl);
+        audio.onended = () => {
+            URL.revokeObjectURL(audioUrl); // Clean up
+        };
+
+        audio.play().catch(error => {
+            console.error('Error playing audio:', error);
+        });
+
+        console.log('Playing generated audio');
+    } catch (error) {
+        console.error('Error processing audio data:', error);
     }
 }

@@ -13,6 +13,27 @@ function loadVoices() {
         voices.forEach(voice => {
             console.log('- Voice:', voice.name, voice.lang, voice.localService ? '(local)' : '(remote)');
         });
+
+        // Log Arabic-specific voices for debugging
+        const arabicVoices = voices.filter(v => v.lang.includes('ar'));
+        if (arabicVoices.length > 0) {
+            console.log('Arabic voices available:', arabicVoices.map(v => `${v.name} (${v.lang})`));
+        } else {
+            console.warn('No Arabic voices found! This may cause issues with Arabic TTS.');
+            console.log('All available voices:', voices.map(v => `${v.name} (${v.lang})`).join(', '));
+        }
+
+        // Update status indicator
+        const statusEl = document.getElementById('speechStatus');
+        if (statusEl) {
+            if (arabicVoices.length > 0) {
+                statusEl.textContent = `🔊 Speech synthesis ready (${voices.length} voices, ${arabicVoices.length} Arabic)`;
+                statusEl.style.color = '#27ae60';
+            } else {
+                statusEl.textContent = `🔊 Speech synthesis ready (${voices.length} voices, no Arabic voices)`;
+                statusEl.style.color = '#f39c12';
+            }
+        }
     }
 }
 
@@ -20,6 +41,22 @@ function loadVoices() {
 loadVoices();
 if (synthesis.onvoiceschanged !== undefined) {
     synthesis.onvoiceschanged = loadVoices;
+}
+
+// Check speech synthesis support
+if (!('speechSynthesis' in window)) {
+    console.warn('Speech synthesis not supported in this browser');
+    const statusEl = document.getElementById('speechStatus');
+    if (statusEl) {
+        statusEl.textContent = '⚠️ Speech synthesis not supported in this browser';
+        statusEl.style.color = '#e74c3c';
+    }
+} else {
+    const statusEl = document.getElementById('speechStatus');
+    if (statusEl) {
+        statusEl.textContent = '🔊 Speech synthesis supported';
+        statusEl.style.color = '#27ae60';
+    }
 }
 
 // Initialize Speech Recognition
@@ -112,6 +149,15 @@ function stopListening() {
 
 // Text to Speech
 function speak(text) {
+    console.log('speak() called with text:', text);
+    console.log('Current language:', currentLanguage);
+
+    // Check if speech synthesis is supported
+    if (!('speechSynthesis' in window)) {
+        console.error('Speech synthesis not supported in this browser');
+        return;
+    }
+
     // Cancel any ongoing speech
     synthesis.cancel();
 
@@ -126,21 +172,46 @@ function speak(text) {
     if (currentLanguage === 'ar') {
         // Remove common French words
         text = text.replace(/voici/gi, '');
-        
-        // Convert Latin numbers to Arabic-Indic numbers for better pronunciation
-        // This helps TTS read numbers in Arabic instead of French
-        const latinToArabicIndic = {
-            '0': '٠', '1': '١', '2': '٢', '3': '٣', '4': '٤',
-            '5': '٥', '6': '٦', '7': '٧', '8': '٨', '9': '٩'
+
+        // For Arabic, try to transliterate to make it easier for non-Arabic voices
+        // This is a simple transliteration to help pronunciation
+        const arabicToEnglish = {
+            'ا': 'a', 'ب': 'b', 'ت': 't', 'ث': 'th', 'ج': 'j', 'ح': 'h', 'خ': 'kh',
+            'د': 'd', 'ذ': 'dh', 'ر': 'r', 'ز': 'z', 'س': 's', 'ش': 'sh', 'ص': 's',
+            'ض': 'd', 'ط': 't', 'ظ': 'z', 'ع': 'a', 'غ': 'gh', 'ف': 'f', 'ق': 'q',
+            'ك': 'k', 'ل': 'l', 'م': 'm', 'ن': 'n', 'ه': 'h', 'و': 'w', 'ي': 'y'
         };
-        
-        text = text.replace(/\d/g, (digit) => latinToArabicIndic[digit] || digit);
-        
+
+        // Simple transliteration for basic Arabic words
+        let transliterated = '';
+        for (let char of text) {
+            transliterated += arabicToEnglish[char] || char;
+        }
+
+        console.log('Original Arabic text:', text);
+        console.log('Transliterated text:', transliterated);
+
+        // Use transliterated text for better pronunciation with non-Arabic voices
+        text = transliterated;
+
+        // Convert Latin numbers to words for better pronunciation
+        text = text.replace(/\d/g, (digit) => {
+            const numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+            return numbers[parseInt(digit)] || digit;
+        });
+
         // Clean up extra spaces
         text = text.replace(/\s+/g, ' ').trim();
-        console.log('Cleaned Arabic text:', text);
+        console.log('Final text for speech:', text);
     }
     
+    // Wait for voices to load if not loaded yet
+    if (!voicesLoaded) {
+        console.log('Voices not loaded yet, waiting...');
+        setTimeout(() => speak(text), 1000);
+        return;
+    }
+
     // Wait longer to ensure cancellation is complete and avoid interruption errors
     setTimeout(() => {
         const utterance = new SpeechSynthesisUtterance(text);
@@ -182,8 +253,31 @@ function speak(text) {
             if (selectedVoice) {
                 console.log('Selected Arabic voice:', selectedVoice.name, selectedVoice.lang);
             } else {
-                console.warn('No Arabic voice found! Available voices:', 
+                console.warn('No Arabic voice found! Available voices:',
                     voices.map(v => `${v.name} (${v.lang})`).join(', '));
+
+                // Fallback: Try to use any voice that might work with Arabic text
+                // Some voices can handle Arabic even if not specifically Arabic
+                const fallbackVoices = voices.filter(v =>
+                    v.lang.includes('en') || v.lang.includes('fr') ||
+                    v.name.toLowerCase().includes('female') ||
+                    v.name.toLowerCase().includes('male')
+                );
+
+                if (fallbackVoices.length > 0) {
+                    selectedVoice = fallbackVoices[0];
+                    console.log('Using fallback voice for Arabic:', selectedVoice.name, selectedVoice.lang);
+                } else {
+                    // Last resort: use the first available voice
+                    selectedVoice = voices[0];
+                    console.log('Using first available voice for Arabic:', selectedVoice ? selectedVoice.name : 'none');
+                }
+
+                // If still no voice selected, force use the first voice
+                if (!selectedVoice && voices.length > 0) {
+                    selectedVoice = voices[0];
+                    console.log('Forced to use first voice:', selectedVoice.name, selectedVoice.lang);
+                }
             }
         } else {
             // For French and English
@@ -202,9 +296,14 @@ function speak(text) {
             utterance.voice = selectedVoice;
             console.log('Using voice:', selectedVoice.name, selectedVoice.lang, selectedVoice.localService ? '(local)' : '(remote)');
         } else {
-            console.warn('No specific voice found for', currentLanguage, 'using default');
+            console.warn('No specific voice found for', currentLanguage, 'using default voice');
             // Log available voices for debugging
             voices.forEach(v => console.log('- Available:', v.name, v.lang));
+
+            // For Arabic, if no voice is found, try to force speak without a specific voice
+            if (currentLanguage === 'ar') {
+                console.log('Attempting to speak Arabic without specific voice');
+            }
         }
         
         // Set voice parameters - slower for Arabic for better clarity
@@ -215,6 +314,14 @@ function speak(text) {
         // Handle errors
         utterance.onerror = (event) => {
             console.error('Speech synthesis error:', event);
+            console.error('Error details:', {
+                error: event.error,
+                utterance: {
+                    text: utterance.text,
+                    lang: utterance.lang,
+                    voice: utterance.voice ? utterance.voice.name : 'none'
+                }
+            });
             // Disable stop button on error
             const stopBtn = document.getElementById('stopBtn');
             if (stopBtn) {
@@ -223,8 +330,12 @@ function speak(text) {
             }
         };
         
+        utterance.onstart = () => {
+            console.log('Speech started successfully');
+        };
+
         utterance.onend = () => {
-            console.log('Speech finished');
+            console.log('Speech finished normally');
             // Disable stop button
             const stopBtn = document.getElementById('stopBtn');
             if (stopBtn) {
@@ -234,7 +345,23 @@ function speak(text) {
         };
         
         console.log('Speaking in', currentLanguage + ':', text.substring(0, 50) + '...');
-        synthesis.speak(utterance);
+        console.log('Final utterance details:', {
+            text: utterance.text,
+            lang: utterance.lang,
+            voice: utterance.voice ? utterance.voice.name : 'default',
+            rate: utterance.rate,
+            pitch: utterance.pitch,
+            volume: utterance.volume
+        });
+
+        try {
+            synthesis.speak(utterance);
+            console.log('synthesis.speak() called successfully');
+            console.log('Currently speaking:', synthesis.speaking);
+            console.log('Pending utterances:', synthesis.pending);
+        } catch (error) {
+            console.error('Error calling synthesis.speak():', error);
+        }
     }, 250);
 }
 
@@ -246,5 +373,47 @@ function stopSpeaking() {
     if (stopBtn) {
         stopBtn.disabled = true;
         stopBtn.style.opacity = '0.5';
+    }
+}
+
+// Test speech synthesis - call this from browser console
+function testSpeech(text = "Hello world", lang = 'en-US') {
+    console.log('=== TESTING SPEECH SYNTHESIS ===');
+    console.log('Text:', text, 'Language:', lang);
+    console.log('Testing speech synthesis...');
+
+    if (!('speechSynthesis' in window)) {
+        console.error('Speech synthesis not supported');
+        return false;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+
+    const voices = synthesis.getVoices();
+    console.log('Available voices:', voices.length);
+    voices.forEach(v => console.log('- Voice:', v.name, v.lang));
+
+    if (voices.length > 0) {
+        const testVoice = voices.find(v => v.lang.startsWith(lang)) || voices[0];
+        if (testVoice) {
+            utterance.voice = testVoice;
+            console.log('Using voice:', testVoice.name, testVoice.lang);
+        } else {
+            console.log('No suitable voice found, using default');
+        }
+    }
+
+    utterance.onstart = () => console.log('Speech started');
+    utterance.onend = () => console.log('Speech ended');
+    utterance.onerror = (e) => console.error('Speech error:', e);
+
+    try {
+        synthesis.speak(utterance);
+        console.log('speak() called successfully');
+        return true;
+    } catch (error) {
+        console.error('Error calling speak():', error);
+        return false;
     }
 }

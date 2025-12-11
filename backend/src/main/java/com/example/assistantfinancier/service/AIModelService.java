@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Base64;
 
 @Service
 public class AIModelService {
@@ -19,7 +20,7 @@ public class AIModelService {
     private final String apiKey = System.getenv("HUGGING_FACE_API_KEY") != null ? System.getenv("HUGGING_FACE_API_KEY") : "hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     
     // Using Mistral-7B-Instruct for multilingual financial advice
-    private final String apiUrl = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2";
+    private final String apiUrl = "https://router.huggingface.co/hf-inference/models/mistralai/Mistral-7B-Instruct-v0.2";
 
     public String processNLP(String requete, String language) {
         System.out.println("=== DEBUG AI: Processing query: " + requete + ", language: " + language);
@@ -125,7 +126,60 @@ public class AIModelService {
             return getFrenchAdvice(topic);
         }
     }
-    
+
+    // Text-to-Speech using Hugging Face TTS model
+    public String generateSpeech(String text, String language) {
+        System.out.println("=== DEBUG TTS: Generating speech for: " + text + ", language: " + language);
+        System.out.println("=== DEBUG TTS: API Key available: " + (apiKey != null && !apiKey.contains("xxx")));
+
+        // For Arabic, use a specific Arabic TTS model
+        String ttsModel;
+        if ("ar".equals(language)) {
+            // Try different Arabic TTS models
+            ttsModel = "facebook/mms-tts-ara"; // Arabic TTS model
+            // Alternative: ttsModel = "microsoft/speecht5_tts"; // Generic model that might work
+        } else if ("en".equals(language)) {
+            ttsModel = "microsoft/speecht5_tts"; // English TTS
+        } else {
+            ttsModel = "microsoft/speecht5_tts"; // Default to English for French
+        }
+
+        String ttsUrl = "https://router.huggingface.co/hf-inference/models/" + ttsModel;
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("Authorization", "Bearer " + apiKey);
+
+        // Prepare the request body for TTS
+        String requestBody = String.format(
+            "{\"inputs\": \"%s\"}",
+            text.replace("\"", "\\\"").replace("\n", " ")
+        );
+
+        HttpEntity<String> entity = new HttpEntity<>(requestBody, headers);
+
+        try {
+            ResponseEntity<byte[]> response = restTemplate.postForEntity(ttsUrl, entity, byte[].class);
+            byte[] audioData = response.getBody();
+
+            if (audioData != null && audioData.length > 0) {
+                // Convert to base64 for transmission
+                String base64Audio = Base64.getEncoder().encodeToString(audioData);
+                System.out.println("=== DEBUG TTS: Generated audio, size: " + audioData.length + " bytes");
+                return base64Audio;
+            } else {
+                System.out.println("=== DEBUG TTS: No audio data received");
+                return null;
+            }
+
+        } catch (Exception e) {
+            System.err.println("=== ERROR TTS: " + e.getMessage());
+            e.printStackTrace();
+            // Return a special marker to indicate server TTS failed
+            return "SERVER_TTS_FAILED";
+        }
+    }
+
     private String getFrenchAdvice(String topic) {
         switch (topic) {
             case "savings":

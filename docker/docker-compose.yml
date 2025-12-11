@@ -20,12 +20,21 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/assistant_financier
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password
-      HUGGING_FACE_API_KEY: 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
+      HUGGING_FACE_API_KEY: ${HUGGING_FACE_API_KEY:-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}
 
   frontend:
     build: ../frontend
     ports:
       - "80:80"
+    depends_on:
+      - backend
+
+  frontend-web:
+    image: nginx:alpine
+    volumes:
+      - ../frontend-web:/usr/share/nginx/html
+    ports:
+      - "3000:80"
     depends_on:
       - backend
 

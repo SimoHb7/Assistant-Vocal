@@ -2,6 +2,7 @@ package com.example.assistantfinancier.controller;
 
 import com.example.assistantfinancier.model.User;
 import com.example.assistantfinancier.security.JwtUtil;
+import com.example.assistantfinancier.service.AIModelService;
 import com.example.assistantfinancier.service.ConversationService;
 import com.example.assistantfinancier.service.FinancialAdvisorService;
 import com.example.assistantfinancier.service.UserService;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api")
 public class FinancialController {
+
+    @Autowired
+    private AIModelService aiModelService;
 
     @Autowired
     private FinancialAdvisorService financialAdvisorService;
@@ -92,6 +96,19 @@ public class FinancialController {
         return ResponseEntity.ok("Réponse vocale : " + request.getAudioText());
     }
 
+    @PostMapping("/tts")
+    public ResponseEntity<String> generateTTS(@RequestBody TTSRequest request) {
+        System.out.println("=== DEBUG TTS: Received TTS request for text: " + request.getText() + ", language: " + request.getLanguage());
+
+        String base64Audio = aiModelService.generateSpeech(request.getText(), request.getLanguage());
+
+        if (base64Audio != null) {
+            return ResponseEntity.ok(base64Audio);
+        } else {
+            return ResponseEntity.status(500).body("Failed to generate speech");
+        }
+    }
+
     // Inner classes for requests
     public static class AdviceRequest {
         private String query;
@@ -108,5 +125,15 @@ public class FinancialController {
 
         public String getAudioText() { return audioText; }
         public void setAudioText(String audioText) { this.audioText = audioText; }
+    }
+
+    public static class TTSRequest {
+        private String text;
+        private String language;
+
+        public String getText() { return text; }
+        public void setText(String text) { this.text = text; }
+        public String getLanguage() { return language; }
+        public void setLanguage(String language) { this.language = language; }
     }
 }
