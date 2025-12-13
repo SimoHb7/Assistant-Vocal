@@ -23,6 +23,7 @@ const translations = {
         budgetQuery: 'Aide pour mon budget',
         investQuery: 'Comment investir?',
         listeningText: 'En écoute...',
+        stopLabel: 'Arrêter',
         errorConnection: 'Erreur de connexion au serveur',
         errorMicrophone: 'Erreur: Microphone non disponible'
     },
@@ -49,6 +50,7 @@ const translations = {
         budgetQuery: 'Help with my budget',
         investQuery: 'How to invest?',
         listeningText: 'Listening...',
+        stopLabel: 'Stop',
         errorConnection: 'Connection error to server',
         errorMicrophone: 'Error: Microphone not available'
     },
@@ -75,6 +77,7 @@ const translations = {
         budgetQuery: 'مساعدة في الميزانية',
         investQuery: 'كيف أستثمر؟',
         listeningText: 'جاري الاستماع...',
+        stopLabel: 'توقف',
         errorConnection: 'خطأ في الاتصال بالخادم',
         errorMicrophone: 'خطأ: الميكروفون غير متاح'
     }
@@ -100,6 +103,7 @@ function updateUILanguage(lang) {
     document.getElementById('textInput').placeholder = t.modalPlaceholder;
     document.getElementById('cancelBtn').textContent = t.cancelBtn;
     document.getElementById('sendBtn').textContent = t.sendBtn;
+    document.getElementById('stopLabel').textContent = t.stopLabel;
     document.getElementById('loadingText').textContent = t.loadingText;
     
     // Update RTL direction for Arabic

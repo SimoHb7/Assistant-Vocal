@@ -22,18 +22,6 @@ function loadVoices() {
             console.warn('No Arabic voices found! This may cause issues with Arabic TTS.');
             console.log('All available voices:', voices.map(v => `${v.name} (${v.lang})`).join(', '));
         }
-
-        // Update status indicator
-        const statusEl = document.getElementById('speechStatus');
-        if (statusEl) {
-            if (arabicVoices.length > 0) {
-                statusEl.textContent = `🔊 Speech synthesis ready (${voices.length} voices, ${arabicVoices.length} Arabic)`;
-                statusEl.style.color = '#27ae60';
-            } else {
-                statusEl.textContent = `🔊 Speech synthesis ready (${voices.length} voices, no Arabic voices)`;
-                statusEl.style.color = '#f39c12';
-            }
-        }
     }
 }
 
@@ -50,12 +38,6 @@ if (!('speechSynthesis' in window)) {
     if (statusEl) {
         statusEl.textContent = '⚠️ Speech synthesis not supported in this browser';
         statusEl.style.color = '#e74c3c';
-    }
-} else {
-    const statusEl = document.getElementById('speechStatus');
-    if (statusEl) {
-        statusEl.textContent = '🔊 Speech synthesis supported';
-        statusEl.style.color = '#27ae60';
     }
 }
 
