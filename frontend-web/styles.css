@@ -144,6 +144,7 @@ body {
     color: var(--text-secondary);
 }
 
+
 /* Message Bubbles */
 .message {
     margin-bottom: 15px;
@@ -183,6 +184,31 @@ body {
     background: #E0E0E0;
     color: var(--text-primary);
     border-bottom-left-radius: 4px;
+}
+
+/* History Separator */
+.history-separator {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.history-separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #E0E0E0;
+}
+
+.history-separator span {
+    background: #FAFAFA;
+    color: var(--text-secondary);
+    padding: 0 20px;
+    font-size: 14px;
+    font-style: italic;
 }
 
 /* Quick Actions */

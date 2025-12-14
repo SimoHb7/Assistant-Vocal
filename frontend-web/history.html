@@ -25,6 +25,62 @@
             color: #1a365d;
         }
 
+        .add-conversation-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .add-conversation-section.collapsed {
+            max-height: 0;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .add-conversation-form {
+            padding: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #1a365d;
+        }
+
+        .form-group textarea,
+        .form-group select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
         .filter-section {
             background: white;
             padding: 20px;
@@ -281,9 +337,50 @@
           </header>
 
           <div class="history-container">
-        <div class="history-header">
-            <h1>📜 Conversation History</h1>
-        </div>
+       <div class="history-header">
+           <h1>📜 Conversation History</h1>
+           <button class="btn btn-primary" onclick="toggleAddForm()">➕ Add Conversation</button>
+       </div>
+
+       <div id="addConversationSection" class="add-conversation-section collapsed">
+           <div class="add-conversation-form">
+               <div class="form-row">
+                   <div class="form-group">
+                       <label for="addQuery">Question</label>
+                       <textarea id="addQuery" placeholder="Enter the question..."></textarea>
+                   </div>
+                   <div class="form-group">
+                       <label for="addResponse">Answer</label>
+                       <textarea id="addResponse" placeholder="Enter the answer..."></textarea>
+                   </div>
+               </div>
+               <div class="form-row">
+                   <div class="form-group">
+                       <label for="addLanguage">Language</label>
+                       <select id="addLanguage">
+                           <option value="fr">Français</option>
+                           <option value="en">English</option>
+                           <option value="ar">العربية</option>
+                       </select>
+                   </div>
+                   <div class="form-group">
+                       <label for="addCategory">Category</label>
+                       <select id="addCategory">
+                           <option value="general">General</option>
+                           <option value="savings">Savings</option>
+                           <option value="loan">Loan</option>
+                           <option value="budget">Budget</option>
+                           <option value="investment">Investment</option>
+                           <option value="account">Account</option>
+                       </select>
+                   </div>
+               </div>
+               <div class="form-actions">
+                   <button class="btn btn-secondary" onclick="toggleAddForm()">Cancel</button>
+                   <button class="btn btn-primary" onclick="addConversation()">Add Conversation</button>
+               </div>
+           </div>
+       </div>
 
         <div class="filter-section">
             <div class="filter-row">
@@ -413,11 +510,16 @@
                 const token = getToken();
                 
                 const response = await fetch(`${API_BASE_URL}/api/conversations`, {
+                    method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
                 });
 
+                if (response.status === 401 || response.status === 403) {
+                    logout();
+                    return;
+                }
                 if (!response.ok) throw new Error('Failed to load conversations');
 
                 allConversations = await response.json();
@@ -519,6 +621,10 @@
                     body: JSON.stringify({ rating })
                 });
 
+                if (response.status === 401 || response.status === 403) {
+                    logout();
+                    return;
+                }
                 if (!response.ok) throw new Error('Failed to rate conversation');
 
                 // Update local data
@@ -548,6 +654,10 @@
                     }
                 });
 
+                if (response.status === 401 || response.status === 403) {
+                    logout();
+                    return;
+                }
                 if (!response.ok) throw new Error('Failed to delete conversation');
 
                 allConversations = allConversations.filter(c => c.id !== id);
@@ -595,6 +705,63 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        function toggleAddForm() {
+            const section = document.getElementById('addConversationSection');
+            section.classList.toggle('collapsed');
+        }
+
+        async function addConversation() {
+            const query = document.getElementById('addQuery').value.trim();
+            const response = document.getElementById('addResponse').value.trim();
+            const language = document.getElementById('addLanguage').value;
+            const category = document.getElementById('addCategory').value;
+
+            if (!query || !response) {
+                alert('Please fill in both question and answer');
+                return;
+            }
+
+            try {
+                const token = getToken();
+                const result = await fetch(`${API_BASE_URL}/api/conversations/create`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        query,
+                        response,
+                        language,
+                        category
+                    })
+                });
+
+                if (result.status === 401 || result.status === 403) {
+                    logout();
+                    return;
+                }
+                if (!result.ok) throw new Error('Failed to add conversation');
+
+                // Clear form
+                document.getElementById('addQuery').value = '';
+                document.getElementById('addResponse').value = '';
+                document.getElementById('addLanguage').value = 'fr';
+                document.getElementById('addCategory').value = 'general';
+
+                // Hide form
+                toggleAddForm();
+
+                // Reload conversations
+                loadConversations();
+
+                alert('Conversation added successfully!');
+            } catch (error) {
+                console.error('Error adding conversation:', error);
+                alert('Failed to add conversation');
+            }
         }
 
         // Load conversations on page load

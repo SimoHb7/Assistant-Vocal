@@ -1,3 +1,4 @@
+
 package com.example.assistantfinancier.controller;
 
 import com.example.assistantfinancier.model.User;
@@ -6,13 +7,18 @@ import com.example.assistantfinancier.service.AIModelService;
 import com.example.assistantfinancier.service.ConversationService;
 import com.example.assistantfinancier.service.FinancialAdvisorService;
 import com.example.assistantfinancier.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/api")
 public class FinancialController {
+    
+    private static final Logger logger = LoggerFactory.getLogger(FinancialController.class);
 
     @Autowired
     private AIModelService aiModelService;
@@ -29,15 +35,21 @@ public class FinancialController {
     @Autowired
     private JwtUtil jwtUtil;
 
+
     @PostMapping("/conseil")
     public ResponseEntity<String> handleRequeteFinanciere(
             @RequestBody AdviceRequest request,
             @RequestHeader(value = "Authorization", required = false) String token) {
         
+        logger.info("CONSEIL_REQUEST_START: QueryLength={}, Language={}, HasToken={}", 
+                   request.getQuery().length(), 
+                   request.getLanguage() != null ? request.getLanguage() : "fr",
+                   token != null && token.startsWith("Bearer "));
+        
         String language = request.getLanguage() != null ? request.getLanguage() : "fr";
-        System.out.println("=== DEBUG: Received language: " + language + ", query: " + request.getQuery());
         
         User user = null;
+        boolean isAuthenticated = false;
         
         // Try to get authenticated user
         if (token != null && token.startsWith("Bearer ")) {
@@ -45,8 +57,15 @@ public class FinancialController {
                 String jwt = token.substring(7);
                 String email = jwtUtil.getEmailFromToken(jwt);
                 user = userService.findByEmail(email).orElse(null);
+                isAuthenticated = (user != null);
+                
+                if (user != null) {
+                    logger.info("AUTH_SUCCESS: UserID={}, Email={}", user.getId(), email);
+                } else {
+                    logger.warn("AUTH_FAILED: Email={} not found in database", email);
+                }
             } catch (Exception e) {
-                System.out.println("=== DEBUG: Token validation failed, using guest mode");
+                logger.warn("AUTH_TOKEN_INVALID: Error={}", e.getMessage());
             }
         }
         
@@ -55,20 +74,39 @@ public class FinancialController {
             user = new User();
             user.setNom("Guest");
             user.setLanguePreferee(language);
+            logger.info("GUEST_MODE: Using temporary user for query processing");
         }
+        
+        logger.info("AI_PROCESSING_START: UserID={}, UserType={}, QueryPreview={}", 
+                   user.getId(), isAuthenticated ? "AUTHENTICATED" : "GUEST",
+                   request.getQuery().substring(0, Math.min(request.getQuery().length(), 50)));
         
         String conseil = financialAdvisorService.genererConseil(user, request.getQuery());
-        System.out.println("=== DEBUG: Returning response: " + conseil);
+        
+        logger.info("AI_PROCESSING_SUCCESS: ResponseLength={}", conseil.length());
         
         // Save conversation if user is authenticated
-        if (user.getId() != null) {
+        if (user.getId() != null && isAuthenticated) {
             try {
                 String category = categorizeQuery(request.getQuery());
+                
+                logger.info("CONVERSATION_SAVE_ATTEMPT: UserID={}, Category={}, QueryLength={}", 
+                           user.getId(), category, request.getQuery().length());
+                
                 conversationService.saveConversation(user, request.getQuery(), conseil, language, category);
+                
+                logger.info("CONVERSATION_SAVE_SUCCESS: UserID={}, Conversation saved successfully", user.getId());
+                
             } catch (Exception e) {
-                System.out.println("=== DEBUG: Failed to save conversation: " + e.getMessage());
+                logger.error("CONVERSATION_SAVE_ERROR: UserID={}, Error={}, StackTrace={}", 
+                            user.getId(), e.getMessage(), e.getStackTrace());
             }
+        } else {
+            logger.info("CONVERSATION_SAVE_SKIPPED: UserID={}, Authenticated={}", 
+                       user.getId(), isAuthenticated);
         }
+        
+        logger.info("CONSEIL_REQUEST_COMPLETE: Success=true, ResponseLength={}", conseil.length());
         
         return ResponseEntity.ok(conseil);
     }

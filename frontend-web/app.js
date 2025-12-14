@@ -1,6 +1,59 @@
+
 // Main Application Logic
 let currentLanguage = 'fr';
-const BACKEND_URL = 'http://localhost:8080/api/conseil';
+
+// For standalone use (not in Docker), use localhost
+const BACKEND_URL = typeof API_BASE_URL !== 'undefined' ?
+    `${API_BASE_URL}/api/conseil` : 'http://localhost:8081/api/conseil';
+
+
+// Authentication functions for iframe context
+function getToken() {
+    // Define storage keys
+    const TOKEN_KEY = 'auth_token';
+    
+    // First try to get token from iframe's own storage
+    let token = localStorage.getItem(TOKEN_KEY) || sessionStorage.getItem(TOKEN_KEY);
+    
+    // If not found and we're in an iframe, try to get from parent window
+    if (!token && window !== window.parent) {
+        try {
+            const parentToken = window.parent.localStorage.getItem(TOKEN_KEY) || 
+                              window.parent.sessionStorage.getItem(TOKEN_KEY);
+            if (parentToken) {
+                token = parentToken;
+            }
+        } catch (e) {
+            console.warn('Cannot access parent window tokens:', e);
+        }
+    }
+    
+    return token;
+}
+
+function getUserInfo() {
+    // Define storage keys
+    const USER_KEY = 'user_info';
+    
+    // First try to get user info from iframe's own storage
+    let userStr = localStorage.getItem(USER_KEY) || sessionStorage.getItem(USER_KEY);
+    
+    // If not found and we're in an iframe, try to get from parent window
+    if (!userStr && window !== window.parent) {
+        try {
+            const parentUserStr = window.parent.localStorage.getItem(USER_KEY) || 
+                                window.parent.sessionStorage.getItem(USER_KEY);
+            if (parentUserStr) {
+                userStr = parentUserStr;
+            }
+        } catch (e) {
+            console.warn('Cannot access parent window user info:', e);
+        }
+    }
+    
+    return userStr ? JSON.parse(userStr) : null;
+}
+
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,6 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize with user's language or French
     updateUILanguage(currentLanguage);
+    
+    // Load conversation history after app initialization
+    setTimeout(() => {
+        loadConversationHistory();
+    }, 1000); // Delay to ensure DOM is fully loaded
 });
 
 // Show/Hide Loading Spinner
@@ -105,7 +163,84 @@ function quickAction(type) {
     }
 }
 
-// Show Message in Conversation
+
+// Load conversation history from API
+async function loadConversationHistory() {
+    console.log('Loading conversation history...');
+    
+    const token = getToken();
+    if (!token) {
+        console.log('No authentication token found, skipping history load');
+        return;
+    }
+    
+    try {
+        const headers = {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Authorization': `Bearer ${token}`
+        };
+        
+        const response = await fetch('http://localhost:8081/api/conversations', {
+            method: 'GET',
+            headers: headers
+        });
+        
+        if (response.ok) {
+            const conversations = await response.json();
+            console.log('Loaded conversation history:', conversations.length, 'conversations');
+            
+            if (conversations.length > 0) {
+                // Hide welcome message and show history
+                const welcomeMessage = document.getElementById('welcomeMessage');
+                if (welcomeMessage) {
+                    welcomeMessage.style.display = 'none';
+                }
+                
+                // Clear existing messages (except welcome)
+                const conversationArea = document.getElementById('conversationArea');
+                const existingMessages = conversationArea.querySelectorAll('.message');
+                existingMessages.forEach(msg => msg.remove());
+                
+                // Display recent conversations (limit to last 10)
+                const recentConversations = conversations.slice(-10);
+                recentConversations.forEach(conv => {
+                    displayConversationMessage(conv.query, 'user');
+                    displayConversationMessage(conv.response, 'assistant');
+                });
+                
+                // Add separator between history and new messages
+                const separator = document.createElement('div');
+                separator.className = 'history-separator';
+                separator.innerHTML = '<span>--- Conversation terminée ---</span>';
+                conversationArea.appendChild(separator);
+            }
+        } else {
+            console.error('Failed to load conversation history:', response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error('Error loading conversation history:', error);
+    }
+}
+
+// Display a conversation message with timestamp
+function displayConversationMessage(text, sender) {
+    const conversationArea = document.getElementById('conversationArea');
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message message-${sender}`;
+    
+    const bubble = document.createElement('div');
+    bubble.className = 'message-bubble';
+    bubble.textContent = text;
+    
+    messageDiv.appendChild(bubble);
+    conversationArea.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    conversationArea.scrollTop = conversationArea.scrollHeight;
+}
+
+// Show Message in Conversation (existing function)
 function showMessage(text, sender) {
     // Hide welcome message on first message
     const welcomeMessage = document.getElementById('welcomeMessage');
@@ -129,6 +264,8 @@ function showMessage(text, sender) {
     conversationArea.scrollTop = conversationArea.scrollHeight;
 }
 
+
+
 // Send Query to Backend
 async function sendQueryToBackend(query) {
     console.log('=== Sending to backend ===');
@@ -149,14 +286,27 @@ async function sendQueryToBackend(query) {
         
         console.log('Request body:', JSON.stringify(requestBody));
         
+        // Prepare headers
+        const headers = {
+            'Content-Type': 'application/json; charset=utf-8'
+        };
+        
+        // Add Authorization header if user is authenticated
+        const token = getToken();
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
+            console.log('Adding auth token to request');
+        } else {
+            console.log('No auth token found, this request may not save conversation history');
+        }
+        
         const response = await fetch(BACKEND_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
+            headers: headers,
             body: JSON.stringify(requestBody)
         });
         
+
         console.log('Response status:', response.status);
         
         if (response.ok) {
@@ -165,6 +315,11 @@ async function sendQueryToBackend(query) {
             
             // Show assistant message
             showMessage(responseText, 'assistant');
+
+            // Save conversation to backend if user is authenticated
+            if (token) {
+                await saveConversation(query, responseText, currentLanguage, 'general');
+            }
 
             // Generate and play speech from server
             generateAndPlaySpeech(responseText, currentLanguage);
@@ -182,16 +337,32 @@ async function sendQueryToBackend(query) {
     }
 }
 
+
 // Generate and play speech using server-side TTS
 async function generateAndPlaySpeech(text, language) {
     console.log('Generating speech for:', text.substring(0, 50) + '...');
 
     try {
-        const response = await fetch('http://localhost:8080/api/tts', {
+        // Prepare headers
+        const headers = {
+            'Content-Type': 'application/json; charset=utf-8'
+        };
+        
+
+        // Add Authorization header if user is authenticated
+        const token = getToken();
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
+            console.log('Adding auth token to TTS request');
+        }
+        
+
+        const ttsUrl = typeof API_BASE_URL !== 'undefined' ?
+            `${API_BASE_URL}/api/tts` : 'http://localhost:8081/api/tts';
+
+        const response = await fetch(ttsUrl, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
+            headers: headers,
             body: JSON.stringify({
                 text: text,
                 language: language
@@ -223,6 +394,7 @@ async function generateAndPlaySpeech(text, language) {
     }
 }
 
+
 // Play base64 encoded audio
 function playBase64Audio(base64Audio) {
     try {
@@ -248,5 +420,46 @@ function playBase64Audio(base64Audio) {
         console.log('Playing generated audio');
     } catch (error) {
         console.error('Error processing audio data:', error);
+    }
+}
+
+
+// Save conversation to backend
+async function saveConversation(query, response, language, category) {
+    console.log('💾 Conversation saved successfully to database');
+    
+    try {
+        const token = getToken();
+        if (!token) {
+            console.log('No authentication token found, cannot save conversation');
+            return;
+        }
+
+        const requestBody = {
+            query: query,
+            response: response,
+            language: language,
+            category: category || 'general'
+        };
+
+        console.log('Saving conversation to backend:', JSON.stringify(requestBody));
+
+        const saveResponse = await fetch('http://localhost:8081/api/conversations/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(requestBody)
+        });
+
+        if (saveResponse.ok) {
+            const result = await saveResponse.json();
+            console.log('✅ Conversation saved successfully with ID:', result.id);
+        } else {
+            console.error('❌ Failed to save conversation:', saveResponse.status, saveResponse.statusText);
+        }
+    } catch (error) {
+        console.error('❌ Error saving conversation:', error);
     }
 }

@@ -181,7 +181,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     try {
       print('=== DEBUG: Sending request with language: $_selectedLanguage, query: $query');
       final response = await http.post(
-        Uri.parse('http://localhost:8080/api/conseil'),
+        Uri.parse('http://backend:8081/api/conseil'),
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
         },
