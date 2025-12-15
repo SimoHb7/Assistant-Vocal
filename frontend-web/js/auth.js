@@ -12,9 +12,9 @@ async function login(email, password, rememberMe = false) {
             },
             body: JSON.stringify({ email, password }),
         });
-        
+
         const data = await response.json();
-        
+
         if (response.ok && data.token) {
             // Store token and user info
             const storage = rememberMe ? localStorage : sessionStorage;
@@ -25,11 +25,16 @@ async function login(email, password, rememberMe = false) {
                 role: data.role,
                 languePreferee: data.languePreferee,
             }));
-            
+
             if (rememberMe) {
                 localStorage.setItem(STORAGE_KEYS.REMEMBER_ME, 'true');
             }
-            
+
+            // Set assistant language from user preference
+            if (data.languePreferee && SUPPORTED_LANGUAGES.includes(data.languePreferee)) {
+                setCurrentLanguage(data.languePreferee);
+            }
+
             return { success: true, user: data };
         } else {
             return { success: false, error: data.error || 'Login failed' };
@@ -50,17 +55,17 @@ async function register(nom, email, password, telephone, languePreferee) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ 
-                nom, 
-                email, 
-                password, 
-                telephone, 
-                languePreferee 
+            body: JSON.stringify({
+                nom,
+                email,
+                password,
+                telephone,
+                languePreferee
             }),
         });
-        
+
         const data = await response.json();
-        
+
         if (response.ok && data.token) {
             // Store token and user info
             sessionStorage.setItem(STORAGE_KEYS.TOKEN, data.token);
@@ -70,7 +75,12 @@ async function register(nom, email, password, telephone, languePreferee) {
                 role: data.role,
                 languePreferee: data.languePreferee,
             }));
-            
+
+            // Set assistant language from user preference
+            if (data.languePreferee && SUPPORTED_LANGUAGES.includes(data.languePreferee)) {
+                setCurrentLanguage(data.languePreferee);
+            }
+
             return { success: true, user: data };
         } else {
             return { success: false, error: data.error || 'Registration failed' };

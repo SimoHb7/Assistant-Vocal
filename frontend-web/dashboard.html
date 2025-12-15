@@ -116,7 +116,7 @@
                 </div>
                 
                 <div class="quick-actions">
-                    <h2>Actions Rapides</h2>
+                    <h2 data-i18n="quickActionsTitle">Actions Rapides</h2>
                     <div class="actions-grid">
                         <button class="action-btn" onclick="showSection('assistant', this)">
                             <i class="fas fa-microphone"></i>
@@ -138,14 +138,14 @@
 
                     <!-- Charts Section -->
                     <div style="margin-top: 30px;">
-                        <h2 style="color: #1a365d; margin-bottom: 20px;">Financial Overview</h2>
+                        <h2 style="color: #1a365d; margin-bottom: 20px;">Aperçu Financier</h2>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
                             <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                <h3 style="color: #1a365d; margin: 0 0 15px 0;">Income vs Expenses</h3>
+                                <h3 style="color: #1a365d; margin: 0 0 15px 0;">Revenus vs Dépenses</h3>
                                 <canvas id="incomeExpenseChart" style="max-height: 250px;"></canvas>
                             </div>
                             <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                <h3 style="color: #1a365d; margin: 0 0 15px 0;">Expenses by Category</h3>
+                                <h3 style="color: #1a365d; margin: 0 0 15px 0;">Dépenses par Catégorie</h3>
                                 <canvas id="categoryChart" style="max-height: 250px;"></canvas>
                             </div>
                         </div>
@@ -194,6 +194,7 @@
     <script src="js/config.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/api.js"></script>
+    <script src="translations.js"></script>
     <script>
         let incomeExpenseChart = null;
         let categoryChart = null;
@@ -265,9 +266,9 @@
             incomeExpenseChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Income', 'Expenses', 'Net'],
+                    labels: ['Revenus', 'Dépenses', 'Net'],
                     datasets: [{
-                        label: 'Amount (€)',
+                        label: 'Montant (€)',
                         data: [income, expenses, income - expenses],
                         backgroundColor: [
                             'rgba(56, 161, 105, 0.8)',
@@ -371,6 +372,9 @@
             if (section) {
                 showSection(section);
             }
+
+            // Initialize UI language to French for dashboard
+            updateUILanguage('fr');
         });
         
         // Section navigation

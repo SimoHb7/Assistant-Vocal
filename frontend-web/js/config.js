@@ -58,6 +58,16 @@ function setCurrentLanguage(lang) {
 // Initialize assistant language
 let currentLanguage = getCurrentLanguage();
 
+// If user is already logged in, use their preferred language
+const userInfo = getUserInfo();
+if (userInfo && userInfo.languePreferee && SUPPORTED_LANGUAGES.includes(userInfo.languePreferee)) {
+    currentLanguage = userInfo.languePreferee;
+    localStorage.setItem(STORAGE_KEYS.ASSISTANT_LANGUAGE, currentLanguage);
+}
+
+// Set default dashboard language to French (but assistant can still switch)
+const DASHBOARD_LANGUAGE = 'fr';
+
 // ================================
 // Backend URL (standalone / docker-safe)
 // ================================

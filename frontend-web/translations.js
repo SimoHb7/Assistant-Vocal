@@ -11,7 +11,7 @@ const translations = {
         savingsBtn: 'Épargne',
         budgetBtn: 'Budget',
         investBtn: 'Investir',
-        micLabel: 'Écouter',
+        micLabel: 'Parler',
         typeLabel: 'Taper',
         modalTitle: 'Tapez votre question',
         modalPlaceholder: 'Ex: Comment épargner de l\'argent?',
@@ -38,7 +38,7 @@ const translations = {
         savingsBtn: 'Savings',
         budgetBtn: 'Budget',
         investBtn: 'Invest',
-        micLabel: 'Listen',
+        micLabel: 'Speak',
         typeLabel: 'Type',
         modalTitle: 'Type your question',
         modalPlaceholder: 'Ex: How to save money?',
@@ -65,7 +65,7 @@ const translations = {
         savingsBtn: 'مدخرات',
         budgetBtn: 'ميزانية',
         investBtn: 'استثمار',
-        micLabel: 'استمع',
+        micLabel: 'تحدث',
         typeLabel: 'اكتب',
         modalTitle: 'اكتب سؤالك',
         modalPlaceholder: 'مثال: كيف أوفر المال؟',
@@ -85,35 +85,38 @@ const translations = {
 
 function updateUILanguage(lang) {
     const t = translations[lang];
-    
-    // Update all text elements
-    document.getElementById('title').textContent = t.title;
-    document.getElementById('subtitle').textContent = t.subtitle;
-    document.getElementById('conversationTitle').textContent = t.conversationTitle;
-    document.getElementById('welcomeText').textContent = t.welcomeText;
-    document.getElementById('welcomeSubtext').textContent = t.welcomeSubtext;
-    document.getElementById('quickActionsTitle').textContent = t.quickActionsTitle;
-    document.getElementById('loanBtn').textContent = t.loanBtn;
-    document.getElementById('savingsBtn').textContent = t.savingsBtn;
-    document.getElementById('budgetBtn').textContent = t.budgetBtn;
-    document.getElementById('investBtn').textContent = t.investBtn;
-    document.getElementById('micLabel').textContent = t.micLabel;
-    document.getElementById('typeLabel').textContent = t.typeLabel;
-    document.getElementById('modalTitle').textContent = t.modalTitle;
-    document.getElementById('textInput').placeholder = t.modalPlaceholder;
-    document.getElementById('cancelBtn').textContent = t.cancelBtn;
-    document.getElementById('sendBtn').textContent = t.sendBtn;
-    document.getElementById('stopLabel').textContent = t.stopLabel;
-    document.getElementById('loadingText').textContent = t.loadingText;
-    
+    if (!t) return;
+
+    // Safely update elements with data-i18n attributes
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        if (!element) return; // Skip if element is null
+
+        const key = element.getAttribute('data-i18n');
+        if (t[key]) {
+            try {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = t[key];
+                } else {
+                    element.textContent = t[key];
+                }
+            } catch (error) {
+                console.warn(`Failed to update element with data-i18n="${key}":`, error);
+            }
+        }
+    });
+
     // Update RTL direction for Arabic
-    if (lang === 'ar') {
-        document.body.classList.add('rtl');
-        document.documentElement.setAttribute('dir', 'rtl');
-        document.documentElement.setAttribute('lang', 'ar');
-    } else {
-        document.body.classList.remove('rtl');
-        document.documentElement.setAttribute('dir', 'ltr');
-        document.documentElement.setAttribute('lang', lang);
+    try {
+        if (lang === 'ar') {
+            document.body.classList.add('rtl');
+            document.documentElement.setAttribute('dir', 'rtl');
+            document.documentElement.setAttribute('lang', 'ar');
+        } else {
+            document.body.classList.remove('rtl');
+            document.documentElement.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', lang);
+        }
+    } catch (error) {
+        console.warn('Failed to update document direction:', error);
     }
 }
