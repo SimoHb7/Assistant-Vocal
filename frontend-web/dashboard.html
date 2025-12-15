@@ -155,7 +155,7 @@
             
             <!-- Assistant Section (embedded from original) -->
             <section id="assistant" class="content-section">
-                <iframe src="index.html" style="width: 100%; height: calc(100vh - 120px); border: none; border-radius: 12px;"></iframe>
+                <iframe src="index.html?embedded=true" style="width: 100%; height: calc(100vh - 120px); border: none; border-radius: 12px;"></iframe>
             </section>
             
             <!-- Transactions Section -->
@@ -421,7 +421,14 @@
             if (titleElement && titles[sectionId]) {
                 titleElement.textContent = titles[sectionId];
             }
-            
+
+            // Update URL for assistant section
+            if (sectionId === 'assistant') {
+                history.pushState(null, '', '?section=assistant');
+            } else {
+                history.pushState(null, '', window.location.pathname);
+            }
+
             // Close mobile sidebar
             const sidebar = document.querySelector('.sidebar');
             if (sidebar) {

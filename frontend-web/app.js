@@ -22,8 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize UI
     updateUILanguage(currentLanguage);
 
-    // Load conversation history
-    setTimeout(loadConversationHistory, 500);
+    // Load conversation history only if not embedded
+    const urlParams = new URLSearchParams(window.location.search);
+    if (!urlParams.get('embedded')) {
+        setTimeout(loadConversationHistory, 500);
+    }
 });
 
 // ================================
