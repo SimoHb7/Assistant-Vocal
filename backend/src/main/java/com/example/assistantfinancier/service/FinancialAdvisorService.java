@@ -10,9 +10,11 @@ public class FinancialAdvisorService {
     @Autowired
     private AIModelService aiModelService;
 
-    public String genererConseil(User user, String requete) {
-        // Use AI for processing with user's language
-        String aiResponse = aiModelService.processNLP(requete, user.getLanguePreferee());
+
+    public String genererConseil(User user, String requete, String language) {
+        // Use the language parameter from the request (not user's preferred language)
+        String effectiveLanguage = language != null ? language : "fr";
+        String aiResponse = aiModelService.processNLP(requete, effectiveLanguage);
         return aiResponse;
     }
 

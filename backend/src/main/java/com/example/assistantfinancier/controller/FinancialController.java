@@ -81,7 +81,8 @@ public class FinancialController {
                    user.getId(), isAuthenticated ? "AUTHENTICATED" : "GUEST",
                    request.getQuery().substring(0, Math.min(request.getQuery().length(), 50)));
         
-        String conseil = financialAdvisorService.genererConseil(user, request.getQuery());
+
+        String conseil = financialAdvisorService.genererConseil(user, request.getQuery(), language);
         
         logger.info("AI_PROCESSING_SUCCESS: ResponseLength={}", conseil.length());
         

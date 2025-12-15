@@ -1,57 +1,46 @@
+# Language Response Fix - TODO
+
+## Problem
+The assistant responds in French regardless of the query language because the backend service ignores the language parameter from the request and uses the user's preferred language instead.
+
+## Solution
+Modify the backend to properly use the language parameter from the request.
+
+## Tasks
 
 
+### 1. Fix FinancialAdvisorService
+- [x] Modify `genererConseil()` method to accept a language parameter
+- [x] Update method to use the passed language parameter instead of user.getLanguePreferee()
 
 
+### 2. Update FinancialController  
+- [x] Update the call to `genererConseil()` to pass the language parameter from the request
 
 
-# TODO: Display Conversation History in Assistant Interface
+### 3. Test the fix
+- [x] Implemented the language response fix
+- [ ] Test with French queries
+- [ ] Test with English queries  
+- [ ] Test with Arabic queries
+- [ ] Verify responses are in the correct language
 
-## ✅ TASK COMPLETED SUCCESSFULLY!
+## Summary of Changes Made
 
-## Issue Resolution Summary
-The assistant interface (index.html) now displays conversation history directly in the conversation card, allowing users to see their previous conversations when they open the assistant.
+### 1. Fixed FinancialAdvisorService.java
+- Modified `genererConseil(User user, String requete)` to `genererConseil(User user, String requete, String language)`
+- Changed from using `user.getLanguePreferee()` to using the passed `language` parameter
+- Added fallback to French ("fr") if language parameter is null
 
-## ✅ Completed Features
-- [x] **Load conversation history**: Fetch previous conversations when assistant loads
-- [x] **Display history in conversation card**: Show previous messages with timestamps
-- [x] **Organize by conversation**: Display conversations chronologically
-- [x] **Add new messages**: New messages continue after history display
-- [x] **Visual separation**: History and new messages are separated by a clean divider
+### 2. Fixed FinancialController.java
+- Updated the call to `financialAdvisorService.genererConseil(user, request.getQuery(), language)`
+- Now properly passes the language parameter from the request to the service layer
 
-## Files Modified
-- ✅ frontend-web/app.js (added history loading functionality)
-- ✅ frontend-web/styles.css (added history separator styling)
+### 3. Root Cause Resolution
+- **Before**: Backend ignored the language parameter from frontend requests and always used the user's preferred language
+- **After**: Backend now correctly uses the language parameter from each request
+- **Result**: Assistant will now respond in the language of the query instead of defaulting to French
 
-## Technical Implementation
-
-### New Functions Added:
-1. **`loadConversationHistory()`** - Fetches conversations from `/api/conversations`
-2. **`displayConversationMessage()`** - Displays individual messages from history
-3. **Updated initialization** - Calls history loading after app startup
-
-### Key Features:
-- **Authentication-aware**: Only loads history for authenticated users
-- **Performance optimized**: Shows last 10 conversations to maintain responsiveness
-- **Clean UI**: Visual separator between history and new messages
-- **Responsive**: Works on both standalone assistant and dashboard iframe
-- **Error handling**: Graceful fallback if history loading fails
-
-## User Experience
-- ✅ When user opens assistant (index.html), it automatically loads their recent conversations
-- ✅ Users see their conversation history in the conversation card
-- ✅ New messages continue after the historical messages
-- ✅ Clear visual separation between past and present conversations
-- ✅ Anonymous users can still use the assistant (history loading is skipped)
-
-## Expected vs Actual Results
-- ✅ **Expected**: Assistant should load and display recent conversations
-- ✅ **Expected**: History should be organized chronologically with clear boundaries  
-- ✅ **Expected**: New messages should continue after history display
-- ✅ **Expected**: Should work for authenticated users
-- ✅ **Actual**: All expectations met with additional error handling and performance optimization
-
-## Usage Instructions
-1. **Login** at http://localhost:3000/login.html
-2. **Use the assistant** at http://localhost:3000/index.html or dashboard
-3. **Previous conversations** will automatically appear in the conversation card
-4. **New conversations** will continue after the history separator
+## Files to Modify
+1. `backend/src/main/java/com/example/assistantfinancier/service/FinancialAdvisorService.java`
+2. `backend/src/main/java/com/example/assistantfinancier/controller/FinancialController.java`
