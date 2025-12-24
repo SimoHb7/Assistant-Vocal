@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Assistant Financier Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Transactions Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.example.tests.TransactionsTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testFilterButtonsPresent"/>
+          <include name="testExportFunctionality"/>
+          <include name="testCorrectURL"/>
+          <include name="setUp"/>
+          <include name="login"/>
+          <include name="testSearchFunctionality"/>
+        </methods>
+      </class> <!-- com.example.tests.TransactionsTest -->
+    </classes>
+  </test> <!-- Transactions Tests(failed) -->
+  <test thread-count="5" name="Settings Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.example.tests.SettingsTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testThemeToggle"/>
+          <include name="testProfileTab"/>
+          <include name="testNotificationsTab"/>
+          <include name="setUp"/>
+          <include name="testPreferencesTab"/>
+          <include name="testCorrectURL"/>
+          <include name="login"/>
+          <include name="testNotificationToggles"/>
+          <include name="testLanguageSelection"/>
+          <include name="testSecurityTab"/>
+        </methods>
+      </class> <!-- com.example.tests.SettingsTest -->
+    </classes>
+  </test> <!-- Settings Tests(failed) -->
+</suite> <!-- Failed suite [Assistant Financier Test Suite] -->

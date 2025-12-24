@@ -1,0 +1,13 @@
+com\example\pages\LoginPage.class
+com\example\pages\TransactionsPage.class
+com\example\pages\DashboardPage.class
+com\example\pages\SettingsPage.class
+com\example\tests\HistoryTest.class
+com\example\tests\LoginTest.class
+com\example\tests\RegistrationTest.class
+com\example\tests\DashboardTest.class
+com\example\base\BaseTest.class
+com\example\pages\HistoryPage.class
+com\example\tests\SettingsTest.class
+com\example\tests\TransactionsTest.class
+com\example\tests\DashboardSectionsTest.class

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Assistant Financier Test Suite" parallel="false">
+    <test name="Authentication Tests">
+        <classes>
+            <class name="com.example.tests.LoginTest"/>
+            <class name="com.example.tests.RegistrationTest"/>
+        </classes>
+    </test>
+    
+    <test name="Dashboard Tests">
+        <classes>
+            <class name="com.example.tests.DashboardTest"/>
+            <class name="com.example.tests.DashboardSectionsTest"/>
+        </classes>
+    </test>
+    
+    <test name="Transactions Tests">
+        <classes>
+            <class name="com.example.tests.TransactionsTest"/>
+        </classes>
+    </test>
+    
+    <test name="History Tests">
+        <classes>
+            <class name="com.example.tests.HistoryTest"/>
+        </classes>
+    </test>
+    
+    <test name="Settings Tests">
+        <classes>
+            <class name="com.example.tests.SettingsTest"/>
+        </classes>
+    </test>
+</suite>
