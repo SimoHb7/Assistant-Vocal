@@ -15,8 +15,8 @@ pipeline {
     }
     
     tools {
-        maven 'Maven-3.9.0' // Configure this name in Jenkins Global Tool Configuration
-        jdk 'JDK-17'        // Configure this name in Jenkins Global Tool Configuration
+        maven 'maven' // Using Jenkins default Maven installation
+        // JDK will use system default
     }
     
     stages {
