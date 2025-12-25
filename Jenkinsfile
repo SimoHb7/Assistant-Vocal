@@ -85,17 +85,6 @@ pipeline {
             }
             post {
                 always {
-                    // Publish TestNG results
-                    publishHTML([
-                        allowMissing: false,
-                        alwaysLinkToLastBuild: true,
-                        keepAll: true,
-                        reportDir: 'selenium-tests/target/surefire-reports',
-                        reportFiles: 'index.html',
-                        reportName: 'Selenium Test Report',
-                        reportTitles: 'Selenium Tests'
-                    ])
-                    
                     // Archive test results
                     junit 'selenium-tests/target/surefire-reports/*.xml'
                     
