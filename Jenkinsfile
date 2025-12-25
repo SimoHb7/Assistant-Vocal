@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo 'Starting Docker containers...'
                 dir('docker') {
-                    bat 'docker compose down -v'
+                    bat 'docker compose down '
                     bat 'docker compose up -d --build'
                 }
                 
