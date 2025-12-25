@@ -2,688 +2,688 @@
 <testng-results ignored="0" total="43" passed="43" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-22T19:09:15 WEST" name="Assistant Financier Test Suite" finished-at="2025-12-22T19:18:13 WEST" duration-ms="538075">
+  <suite started-at="2025-12-25T10:34:08 WEST" name="Assistant Financier Test Suite" finished-at="2025-12-25T10:44:14 WEST" duration-ms="606616">
     <groups>
     </groups>
-    <test started-at="2025-12-22T19:09:15 WEST" name="Authentication Tests" finished-at="2025-12-22T19:09:43 WEST" duration-ms="28816">
+    <test started-at="2025-12-25T10:34:08 WEST" name="Authentication Tests" finished-at="2025-12-25T10:34:39 WEST" duration-ms="31710">
       <class name="com.example.tests.RegistrationTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:36 WEST" name="setUp" finished-at="2025-12-22T19:09:37 WEST" duration-ms="698" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:25 WEST" name="setUp" finished-at="2025-12-25T10:34:27 WEST" duration-ms="1739" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testRegistrationPageLoads()[pri:1, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:37 WEST" name="testRegistrationPageLoads" description="Verify registration page loads successfully" finished-at="2025-12-22T19:09:38 WEST" duration-ms="1094" status="PASS">
+        <test-method signature="testRegistrationPageLoads()[pri:1, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:27 WEST" name="testRegistrationPageLoads" description="Verify registration page loads successfully" finished-at="2025-12-25T10:34:33 WEST" duration-ms="5981" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegistrationPageLoads -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:38 WEST" name="tearDown" finished-at="2025-12-22T19:09:38 WEST" duration-ms="96" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:33 WEST" name="tearDown" finished-at="2025-12-25T10:34:33 WEST" duration-ms="263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:38 WEST" name="setUp" finished-at="2025-12-22T19:09:38 WEST" duration-ms="632" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:33 WEST" name="setUp" finished-at="2025-12-25T10:34:34 WEST" duration-ms="1202" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testRegistrationFormElements()[pri:2, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:38 WEST" name="testRegistrationFormElements" description="Verify registration form elements are present" finished-at="2025-12-22T19:09:39 WEST" duration-ms="932" status="PASS">
+        <test-method signature="testRegistrationFormElements()[pri:2, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:34 WEST" name="testRegistrationFormElements" description="Verify registration form elements are present" finished-at="2025-12-25T10:34:35 WEST" duration-ms="1239" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegistrationFormElements -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:39 WEST" name="tearDown" finished-at="2025-12-22T19:09:40 WEST" duration-ms="99" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:35 WEST" name="tearDown" finished-at="2025-12-25T10:34:36 WEST" duration-ms="219" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:40 WEST" name="setUp" finished-at="2025-12-22T19:09:40 WEST" duration-ms="624" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:36 WEST" name="setUp" finished-at="2025-12-25T10:34:37 WEST" duration-ms="1242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testNavigateToLoginFromRegistration()[pri:3, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:40 WEST" name="testNavigateToLoginFromRegistration" description="Verify navigation to login page from registration" finished-at="2025-12-22T19:09:43 WEST" duration-ms="3184" status="PASS">
+        <test-method signature="testNavigateToLoginFromRegistration()[pri:3, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:37 WEST" name="testNavigateToLoginFromRegistration" description="Verify navigation to login page from registration" finished-at="2025-12-25T10:34:39 WEST" duration-ms="2355" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNavigateToLoginFromRegistration -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-22T19:09:43 WEST" name="tearDown" finished-at="2025-12-22T19:09:43 WEST" duration-ms="88" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.RegistrationTest@36bc55de]" started-at="2025-12-25T10:34:39 WEST" name="tearDown" finished-at="2025-12-25T10:34:39 WEST" duration-ms="270" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.example.tests.RegistrationTest -->
       <class name="com.example.tests.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:15 WEST" name="setUp" finished-at="2025-12-22T19:09:16 WEST" duration-ms="1581" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:08 WEST" name="setUp" finished-at="2025-12-25T10:34:11 WEST" duration-ms="3109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLoginPageLoads()[pri:1, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:16 WEST" name="testLoginPageLoads" description="Verify login page loads successfully" finished-at="2025-12-22T19:09:20 WEST" duration-ms="3384" status="PASS">
+        <test-method signature="testLoginPageLoads()[pri:1, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:11 WEST" name="testLoginPageLoads" description="Verify login page loads successfully" finished-at="2025-12-25T10:34:12 WEST" duration-ms="741" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginPageLoads -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:20 WEST" name="tearDown" finished-at="2025-12-22T19:09:20 WEST" duration-ms="114" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:12 WEST" name="tearDown" finished-at="2025-12-25T10:34:12 WEST" duration-ms="258" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:20 WEST" name="setUp" finished-at="2025-12-22T19:09:20 WEST" duration-ms="727" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:12 WEST" name="setUp" finished-at="2025-12-25T10:34:13 WEST" duration-ms="1085" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLoginWithInvalidCredentials()[pri:2, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:20 WEST" name="testLoginWithInvalidCredentials" description="Verify login with invalid credentials shows error" finished-at="2025-12-22T19:09:24 WEST" duration-ms="3083" status="PASS">
+        <test-method signature="testLoginWithInvalidCredentials()[pri:2, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:13 WEST" name="testLoginWithInvalidCredentials" description="Verify login with invalid credentials shows error" finished-at="2025-12-25T10:34:16 WEST" duration-ms="3264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:24 WEST" name="tearDown" finished-at="2025-12-22T19:09:24 WEST" duration-ms="120" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:16 WEST" name="tearDown" finished-at="2025-12-25T10:34:17 WEST" duration-ms="273" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:24 WEST" name="setUp" finished-at="2025-12-22T19:09:24 WEST" duration-ms="669" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:17 WEST" name="setUp" finished-at="2025-12-25T10:34:18 WEST" duration-ms="1171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLoginWithValidCredentials()[pri:3, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:24 WEST" name="testLoginWithValidCredentials" description="Verify login with valid credentials redirects to dashboard" finished-at="2025-12-22T19:09:33 WEST" duration-ms="8462" status="PASS">
+        <test-method signature="testLoginWithValidCredentials()[pri:3, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:18 WEST" name="testLoginWithValidCredentials" description="Verify login with valid credentials redirects to dashboard" finished-at="2025-12-25T10:34:22 WEST" duration-ms="4535" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginWithValidCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:33 WEST" name="tearDown" finished-at="2025-12-22T19:09:34 WEST" duration-ms="711" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:22 WEST" name="tearDown" finished-at="2025-12-25T10:34:23 WEST" duration-ms="282" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:34 WEST" name="setUp" finished-at="2025-12-22T19:09:34 WEST" duration-ms="684" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:23 WEST" name="setUp" finished-at="2025-12-25T10:34:24 WEST" duration-ms="1106" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testEmptyFieldsValidation()[pri:4, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:34 WEST" name="testEmptyFieldsValidation" description="Verify empty fields validation" finished-at="2025-12-22T19:09:36 WEST" duration-ms="1645" status="PASS">
+        <test-method signature="testEmptyFieldsValidation()[pri:4, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:24 WEST" name="testEmptyFieldsValidation" description="Verify empty fields validation" finished-at="2025-12-25T10:34:25 WEST" duration-ms="907" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmptyFieldsValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-22T19:09:36 WEST" name="tearDown" finished-at="2025-12-22T19:09:36 WEST" duration-ms="95" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@42e99e4a]" started-at="2025-12-25T10:34:25 WEST" name="tearDown" finished-at="2025-12-25T10:34:25 WEST" duration-ms="281" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.example.tests.LoginTest -->
     </test> <!-- Authentication Tests -->
-    <test started-at="2025-12-22T19:09:43 WEST" name="Dashboard Tests" finished-at="2025-12-22T19:11:11 WEST" duration-ms="87117">
+    <test started-at="2025-12-25T10:34:39 WEST" name="Dashboard Tests" finished-at="2025-12-25T10:36:38 WEST" duration-ms="118770">
       <class name="com.example.tests.DashboardTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:43 WEST" name="setUp" finished-at="2025-12-22T19:09:44 WEST" duration-ms="673" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:39 WEST" name="setUp" finished-at="2025-12-25T10:34:41 WEST" duration-ms="1352" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:44 WEST" name="login" finished-at="2025-12-22T19:09:48 WEST" duration-ms="3776" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:41 WEST" name="login" finished-at="2025-12-25T10:34:46 WEST" duration-ms="4679" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testDashboardPageLoads()[pri:1, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:48 WEST" name="testDashboardPageLoads" description="Verify dashboard page accessibility" finished-at="2025-12-22T19:09:48 WEST" duration-ms="120" status="PASS">
+        <test-method signature="testDashboardPageLoads()[pri:1, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:46 WEST" name="testDashboardPageLoads" description="Verify dashboard page accessibility" finished-at="2025-12-25T10:34:46 WEST" duration-ms="113" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDashboardPageLoads -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:48 WEST" name="tearDown" finished-at="2025-12-22T19:09:48 WEST" duration-ms="179" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:46 WEST" name="tearDown" finished-at="2025-12-25T10:34:46 WEST" duration-ms="263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:48 WEST" name="setUp" finished-at="2025-12-22T19:09:49 WEST" duration-ms="730" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:46 WEST" name="setUp" finished-at="2025-12-25T10:34:47 WEST" duration-ms="1063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:49 WEST" name="login" finished-at="2025-12-22T19:09:53 WEST" duration-ms="4238" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:47 WEST" name="login" finished-at="2025-12-25T10:34:50 WEST" duration-ms="3302" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testMainPageLoads()[pri:2, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:53 WEST" name="testMainPageLoads" description="Verify main page loads" finished-at="2025-12-22T19:09:53 WEST" duration-ms="111" status="PASS">
+        <test-method signature="testMainPageLoads()[pri:2, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:50 WEST" name="testMainPageLoads" description="Verify main page loads" finished-at="2025-12-25T10:34:51 WEST" duration-ms="259" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMainPageLoads -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:53 WEST" name="tearDown" finished-at="2025-12-22T19:09:53 WEST" duration-ms="123" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:51 WEST" name="tearDown" finished-at="2025-12-25T10:34:51 WEST" duration-ms="256" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:53 WEST" name="setUp" finished-at="2025-12-22T19:09:54 WEST" duration-ms="657" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:51 WEST" name="setUp" finished-at="2025-12-25T10:34:52 WEST" duration-ms="1109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:54 WEST" name="login" finished-at="2025-12-22T19:09:58 WEST" duration-ms="4457" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:52 WEST" name="login" finished-at="2025-12-25T10:34:56 WEST" duration-ms="4375" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testQuickActionsPresent()[pri:3, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:09:58 WEST" name="testQuickActionsPresent" description="Verify quick actions are present on main page" finished-at="2025-12-22T19:10:01 WEST" duration-ms="2109" status="PASS">
+        <test-method signature="testQuickActionsPresent()[pri:3, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:56 WEST" name="testQuickActionsPresent" description="Verify quick actions are present on main page" finished-at="2025-12-25T10:34:58 WEST" duration-ms="2209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testQuickActionsPresent -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:10:01 WEST" name="tearDown" finished-at="2025-12-22T19:10:01 WEST" duration-ms="160" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:34:58 WEST" name="tearDown" finished-at="2025-12-25T10:35:00 WEST" duration-ms="1141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:10:01 WEST" name="setUp" finished-at="2025-12-22T19:10:01 WEST" duration-ms="675" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:35:00 WEST" name="setUp" finished-at="2025-12-25T10:35:01 WEST" duration-ms="1124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:10:01 WEST" name="login" finished-at="2025-12-22T19:10:05 WEST" duration-ms="3455" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:35:01 WEST" name="login" finished-at="2025-12-25T10:35:05 WEST" duration-ms="3857" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testLanguageSelectorPresent()[pri:4, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:10:05 WEST" name="testLanguageSelectorPresent" description="Verify language selector is present" finished-at="2025-12-22T19:10:05 WEST" duration-ms="153" status="PASS">
+        <test-method signature="testLanguageSelectorPresent()[pri:4, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:35:05 WEST" name="testLanguageSelectorPresent" description="Verify language selector is present" finished-at="2025-12-25T10:35:05 WEST" duration-ms="220" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLanguageSelectorPresent -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-22T19:10:05 WEST" name="tearDown" finished-at="2025-12-22T19:10:05 WEST" duration-ms="147" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardTest@4562e04d]" started-at="2025-12-25T10:35:05 WEST" name="tearDown" finished-at="2025-12-25T10:35:05 WEST" duration-ms="232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.example.tests.DashboardTest -->
       <class name="com.example.tests.DashboardSectionsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:05 WEST" name="setUp" finished-at="2025-12-22T19:10:06 WEST" duration-ms="883" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:05 WEST" name="setUp" finished-at="2025-12-25T10:35:06 WEST" duration-ms="1162" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:06 WEST" name="login" finished-at="2025-12-22T19:10:10 WEST" duration-ms="3449" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:06 WEST" name="login" finished-at="2025-12-25T10:35:09 WEST" duration-ms="3145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testDashboardDefault()[pri:1, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:10 WEST" name="testDashboardDefault" description="Verify dashboard loads without section parameter" finished-at="2025-12-22T19:10:12 WEST" duration-ms="2074" status="PASS">
+        <test-method signature="testDashboardDefault()[pri:1, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:09 WEST" name="testDashboardDefault" description="Verify dashboard loads without section parameter" finished-at="2025-12-25T10:35:11 WEST" duration-ms="2118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDashboardDefault -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:12 WEST" name="tearDown" finished-at="2025-12-22T19:10:12 WEST" duration-ms="158" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:11 WEST" name="tearDown" finished-at="2025-12-25T10:35:12 WEST" duration-ms="271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:12 WEST" name="setUp" finished-at="2025-12-22T19:10:12 WEST" duration-ms="728" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:12 WEST" name="setUp" finished-at="2025-12-25T10:35:13 WEST" duration-ms="1153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:12 WEST" name="login" finished-at="2025-12-22T19:10:18 WEST" duration-ms="5173" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:13 WEST" name="login" finished-at="2025-12-25T10:35:16 WEST" duration-ms="3222" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testDashboardAssistantSection()[pri:2, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:18 WEST" name="testDashboardAssistantSection" description="Verify dashboard with assistant section parameter" finished-at="2025-12-22T19:10:20 WEST" duration-ms="2120" status="PASS">
+        <test-method signature="testDashboardAssistantSection()[pri:2, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:16 WEST" name="testDashboardAssistantSection" description="Verify dashboard with assistant section parameter" finished-at="2025-12-25T10:35:18 WEST" duration-ms="2251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDashboardAssistantSection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:20 WEST" name="tearDown" finished-at="2025-12-22T19:10:20 WEST" duration-ms="177" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:18 WEST" name="tearDown" finished-at="2025-12-25T10:35:19 WEST" duration-ms="225" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:20 WEST" name="setUp" finished-at="2025-12-22T19:10:21 WEST" duration-ms="732" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:19 WEST" name="setUp" finished-at="2025-12-25T10:35:20 WEST" duration-ms="1150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:21 WEST" name="login" finished-at="2025-12-22T19:10:24 WEST" duration-ms="3477" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:20 WEST" name="login" finished-at="2025-12-25T10:35:23 WEST" duration-ms="3569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testDashboardSectionsNavigation()[pri:3, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:24 WEST" name="testDashboardSectionsNavigation" description="Verify dashboard sections navigation" finished-at="2025-12-22T19:10:26 WEST" duration-ms="2300" status="PASS">
+        <test-method signature="testDashboardSectionsNavigation()[pri:3, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:23 WEST" name="testDashboardSectionsNavigation" description="Verify dashboard sections navigation" finished-at="2025-12-25T10:35:25 WEST" duration-ms="2131" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDashboardSectionsNavigation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:26 WEST" name="tearDown" finished-at="2025-12-22T19:10:27 WEST" duration-ms="158" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:25 WEST" name="tearDown" finished-at="2025-12-25T10:35:26 WEST" duration-ms="297" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:27 WEST" name="setUp" finished-at="2025-12-22T19:10:27 WEST" duration-ms="657" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:26 WEST" name="setUp" finished-at="2025-12-25T10:35:27 WEST" duration-ms="1169" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:27 WEST" name="login" finished-at="2025-12-22T19:10:31 WEST" duration-ms="3952" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:27 WEST" name="login" finished-at="2025-12-25T10:35:30 WEST" duration-ms="3555" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testDifferentSections()[pri:4, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:31 WEST" name="testDifferentSections" description="Verify dashboard different sections load" finished-at="2025-12-22T19:10:38 WEST" duration-ms="6355" status="PASS">
+        <test-method signature="testDifferentSections()[pri:4, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:30 WEST" name="testDifferentSections" description="Verify dashboard different sections load" finished-at="2025-12-25T10:35:37 WEST" duration-ms="6692" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDifferentSections -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:38 WEST" name="tearDown" finished-at="2025-12-22T19:10:38 WEST" duration-ms="124" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:37 WEST" name="tearDown" finished-at="2025-12-25T10:35:37 WEST" duration-ms="290" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:38 WEST" name="setUp" finished-at="2025-12-22T19:10:38 WEST" duration-ms="674" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:37 WEST" name="setUp" finished-at="2025-12-25T10:35:39 WEST" duration-ms="1114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:38 WEST" name="login" finished-at="2025-12-22T19:10:42 WEST" duration-ms="3417" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:39 WEST" name="login" finished-at="2025-12-25T10:35:44 WEST" duration-ms="5166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testDashboardPageElements()[pri:5, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:42 WEST" name="testDashboardPageElements" description="Verify dashboard page elements are present" finished-at="2025-12-22T19:10:54 WEST" duration-ms="12114" status="PASS">
+        <test-method signature="testDashboardPageElements()[pri:5, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:44 WEST" name="testDashboardPageElements" description="Verify dashboard page elements are present" finished-at="2025-12-25T10:35:56 WEST" duration-ms="12170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDashboardPageElements -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:54 WEST" name="tearDown" finished-at="2025-12-22T19:10:54 WEST" duration-ms="143" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:56 WEST" name="tearDown" finished-at="2025-12-25T10:35:56 WEST" duration-ms="306" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:54 WEST" name="setUp" finished-at="2025-12-22T19:10:55 WEST" duration-ms="727" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:56 WEST" name="setUp" finished-at="2025-12-25T10:35:57 WEST" duration-ms="1227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:55 WEST" name="login" finished-at="2025-12-22T19:10:58 WEST" duration-ms="3597" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:35:57 WEST" name="login" finished-at="2025-12-25T10:36:02 WEST" duration-ms="4255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testSectionSwitching()[pri:6, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:10:58 WEST" name="testSectionSwitching" description="Verify navigation between dashboard sections" finished-at="2025-12-22T19:11:03 WEST" duration-ms="4205" status="PASS">
+        <test-method signature="testSectionSwitching()[pri:6, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:36:02 WEST" name="testSectionSwitching" description="Verify navigation between dashboard sections" finished-at="2025-12-25T10:36:06 WEST" duration-ms="4301" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSectionSwitching -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:11:03 WEST" name="tearDown" finished-at="2025-12-22T19:11:03 WEST" duration-ms="129" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:36:06 WEST" name="tearDown" finished-at="2025-12-25T10:36:06 WEST" duration-ms="285" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:11:03 WEST" name="setUp" finished-at="2025-12-22T19:11:03 WEST" duration-ms="725" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:36:06 WEST" name="setUp" finished-at="2025-12-25T10:36:07 WEST" duration-ms="1112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:11:03 WEST" name="login" finished-at="2025-12-22T19:11:08 WEST" duration-ms="4886" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:36:07 WEST" name="login" finished-at="2025-12-25T10:36:36 WEST" duration-ms="28405" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testInvalidSectionParameter()[pri:7, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:11:08 WEST" name="testInvalidSectionParameter" description="Verify invalid section parameter handling" finished-at="2025-12-22T19:11:10 WEST" duration-ms="2067" status="PASS">
+        <test-method signature="testInvalidSectionParameter()[pri:7, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:36:36 WEST" name="testInvalidSectionParameter" description="Verify invalid section parameter handling" finished-at="2025-12-25T10:36:38 WEST" duration-ms="2156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInvalidSectionParameter -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-22T19:11:10 WEST" name="tearDown" finished-at="2025-12-22T19:11:11 WEST" duration-ms="137" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DashboardSectionsTest@a1153bc]" started-at="2025-12-25T10:36:38 WEST" name="tearDown" finished-at="2025-12-25T10:36:38 WEST" duration-ms="287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.example.tests.DashboardSectionsTest -->
     </test> <!-- Dashboard Tests -->
-    <test started-at="2025-12-22T19:11:11 WEST" name="Transactions Tests" finished-at="2025-12-22T19:13:16 WEST" duration-ms="125290">
+    <test started-at="2025-12-25T10:36:38 WEST" name="Transactions Tests" finished-at="2025-12-25T10:38:45 WEST" duration-ms="127191">
       <class name="com.example.tests.TransactionsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:11 WEST" name="setUp" finished-at="2025-12-22T19:11:11 WEST" duration-ms="742" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:36:38 WEST" name="setUp" finished-at="2025-12-25T10:36:39 WEST" duration-ms="1095" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:11 WEST" name="login" finished-at="2025-12-22T19:11:17 WEST" duration-ms="5363" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:36:39 WEST" name="login" finished-at="2025-12-25T10:36:43 WEST" duration-ms="3529" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testTransactionsPageLoads()[pri:1, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:17 WEST" name="testTransactionsPageLoads" description="Verify transactions page loads successfully" finished-at="2025-12-22T19:11:17 WEST" duration-ms="259" status="PASS">
+        <test-method signature="testTransactionsPageLoads()[pri:1, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:36:43 WEST" name="testTransactionsPageLoads" description="Verify transactions page loads successfully" finished-at="2025-12-25T10:36:43 WEST" duration-ms="303" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTransactionsPageLoads -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:17 WEST" name="tearDown" finished-at="2025-12-22T19:11:17 WEST" duration-ms="113" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:36:43 WEST" name="tearDown" finished-at="2025-12-25T10:36:43 WEST" duration-ms="275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:17 WEST" name="setUp" finished-at="2025-12-22T19:11:18 WEST" duration-ms="741" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:36:43 WEST" name="setUp" finished-at="2025-12-25T10:36:45 WEST" duration-ms="1056" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:18 WEST" name="login" finished-at="2025-12-22T19:11:22 WEST" duration-ms="4227" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:36:45 WEST" name="login" finished-at="2025-12-25T10:36:48 WEST" duration-ms="3556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testTransactionsListVisible()[pri:2, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:22 WEST" name="testTransactionsListVisible" description="Verify transactions list is visible" finished-at="2025-12-22T19:11:48 WEST" duration-ms="26026" status="PASS">
+        <test-method signature="testTransactionsListVisible()[pri:2, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:36:48 WEST" name="testTransactionsListVisible" description="Verify transactions list is visible" finished-at="2025-12-25T10:37:10 WEST" duration-ms="22236" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTransactionsListVisible -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:48 WEST" name="tearDown" finished-at="2025-12-22T19:11:48 WEST" duration-ms="135" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:10 WEST" name="tearDown" finished-at="2025-12-25T10:37:11 WEST" duration-ms="331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:48 WEST" name="setUp" finished-at="2025-12-22T19:11:49 WEST" duration-ms="658" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:11 WEST" name="setUp" finished-at="2025-12-25T10:37:12 WEST" duration-ms="1209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:49 WEST" name="login" finished-at="2025-12-22T19:11:54 WEST" duration-ms="5660" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:12 WEST" name="login" finished-at="2025-12-25T10:37:18 WEST" duration-ms="6232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testAddTransactionButton()[pri:3, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:11:54 WEST" name="testAddTransactionButton" description="Verify add transaction button functionality" finished-at="2025-12-22T19:12:18 WEST" duration-ms="23651" status="PASS">
+        <test-method signature="testAddTransactionButton()[pri:3, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:18 WEST" name="testAddTransactionButton" description="Verify add transaction button functionality" finished-at="2025-12-25T10:37:42 WEST" duration-ms="23688" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddTransactionButton -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:18 WEST" name="tearDown" finished-at="2025-12-22T19:12:18 WEST" duration-ms="125" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:42 WEST" name="tearDown" finished-at="2025-12-25T10:37:42 WEST" duration-ms="330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:18 WEST" name="setUp" finished-at="2025-12-22T19:12:19 WEST" duration-ms="670" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:42 WEST" name="setUp" finished-at="2025-12-25T10:37:43 WEST" duration-ms="1166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:19 WEST" name="login" finished-at="2025-12-22T19:12:23 WEST" duration-ms="4047" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:43 WEST" name="login" finished-at="2025-12-25T10:37:47 WEST" duration-ms="3361" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testFilterButtonsPresent()[pri:4, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:23 WEST" name="testFilterButtonsPresent" description="Verify filter buttons presence" finished-at="2025-12-22T19:12:35 WEST" duration-ms="12125" status="PASS">
+        <test-method signature="testFilterButtonsPresent()[pri:4, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:47 WEST" name="testFilterButtonsPresent" description="Verify filter buttons presence" finished-at="2025-12-25T10:37:59 WEST" duration-ms="12245" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterButtonsPresent -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:35 WEST" name="tearDown" finished-at="2025-12-22T19:12:35 WEST" duration-ms="150" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:59 WEST" name="tearDown" finished-at="2025-12-25T10:37:59 WEST" duration-ms="322" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:35 WEST" name="setUp" finished-at="2025-12-22T19:12:36 WEST" duration-ms="672" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:37:59 WEST" name="setUp" finished-at="2025-12-25T10:38:00 WEST" duration-ms="1145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:36 WEST" name="login" finished-at="2025-12-22T19:12:40 WEST" duration-ms="3757" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:00 WEST" name="login" finished-at="2025-12-25T10:38:05 WEST" duration-ms="4241" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testSearchFunctionality()[pri:5, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:40 WEST" name="testSearchFunctionality" description="Verify search functionality exists" finished-at="2025-12-22T19:12:52 WEST" duration-ms="12133" status="PASS">
+        <test-method signature="testSearchFunctionality()[pri:5, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:05 WEST" name="testSearchFunctionality" description="Verify search functionality exists" finished-at="2025-12-25T10:38:17 WEST" duration-ms="12203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:52 WEST" name="tearDown" finished-at="2025-12-22T19:12:52 WEST" duration-ms="132" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:17 WEST" name="tearDown" finished-at="2025-12-25T10:38:17 WEST" duration-ms="339" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:52 WEST" name="setUp" finished-at="2025-12-22T19:12:53 WEST" duration-ms="683" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:17 WEST" name="setUp" finished-at="2025-12-25T10:38:18 WEST" duration-ms="1063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:53 WEST" name="login" finished-at="2025-12-22T19:12:57 WEST" duration-ms="4384" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:18 WEST" name="login" finished-at="2025-12-25T10:38:28 WEST" duration-ms="9737" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testExportFunctionality()[pri:6, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:12:57 WEST" name="testExportFunctionality" description="Verify export functionality exists" finished-at="2025-12-22T19:13:09 WEST" duration-ms="12106" status="PASS">
+        <test-method signature="testExportFunctionality()[pri:6, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:28 WEST" name="testExportFunctionality" description="Verify export functionality exists" finished-at="2025-12-25T10:38:40 WEST" duration-ms="12223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExportFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:13:09 WEST" name="tearDown" finished-at="2025-12-22T19:13:09 WEST" duration-ms="132" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:40 WEST" name="tearDown" finished-at="2025-12-25T10:38:40 WEST" duration-ms="318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:13:09 WEST" name="setUp" finished-at="2025-12-22T19:13:10 WEST" duration-ms="703" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:40 WEST" name="setUp" finished-at="2025-12-25T10:38:42 WEST" duration-ms="1275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:13:10 WEST" name="login" finished-at="2025-12-22T19:13:16 WEST" duration-ms="5699" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:42 WEST" name="login" finished-at="2025-12-25T10:38:45 WEST" duration-ms="3307" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testCorrectURL()[pri:7, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:13:16 WEST" name="testCorrectURL" description="Verify page URL is correct" finished-at="2025-12-22T19:13:16 WEST" duration-ms="81" status="PASS">
+        <test-method signature="testCorrectURL()[pri:7, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:45 WEST" name="testCorrectURL" description="Verify page URL is correct" finished-at="2025-12-25T10:38:45 WEST" duration-ms="149" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCorrectURL -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-22T19:13:16 WEST" name="tearDown" finished-at="2025-12-22T19:13:16 WEST" duration-ms="107" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.TransactionsTest@14cd1699]" started-at="2025-12-25T10:38:45 WEST" name="tearDown" finished-at="2025-12-25T10:38:45 WEST" duration-ms="240" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.example.tests.TransactionsTest -->
     </test> <!-- Transactions Tests -->
-    <test started-at="2025-12-22T19:13:16 WEST" name="History Tests" finished-at="2025-12-22T19:14:58 WEST" duration-ms="101820">
+    <test started-at="2025-12-25T10:38:45 WEST" name="History Tests" finished-at="2025-12-25T10:40:44 WEST" duration-ms="118887">
       <class name="com.example.tests.HistoryTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:16 WEST" name="setUp" finished-at="2025-12-22T19:13:16 WEST" duration-ms="660" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:45 WEST" name="setUp" finished-at="2025-12-25T10:38:47 WEST" duration-ms="1033" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:16 WEST" name="login" finished-at="2025-12-22T19:13:20 WEST" duration-ms="3668" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:47 WEST" name="login" finished-at="2025-12-25T10:38:50 WEST" duration-ms="3844" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testHistoryPageLoads()[pri:1, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:20 WEST" name="testHistoryPageLoads" description="Verify history page loads successfully" finished-at="2025-12-22T19:13:20 WEST" duration-ms="181" status="PASS">
+        <test-method signature="testHistoryPageLoads()[pri:1, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:50 WEST" name="testHistoryPageLoads" description="Verify history page loads successfully" finished-at="2025-12-25T10:38:51 WEST" duration-ms="294" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHistoryPageLoads -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:20 WEST" name="tearDown" finished-at="2025-12-22T19:13:20 WEST" duration-ms="118" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:51 WEST" name="tearDown" finished-at="2025-12-25T10:38:51 WEST" duration-ms="264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:20 WEST" name="setUp" finished-at="2025-12-22T19:13:21 WEST" duration-ms="718" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:51 WEST" name="setUp" finished-at="2025-12-25T10:38:52 WEST" duration-ms="1212" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:21 WEST" name="login" finished-at="2025-12-22T19:13:26 WEST" duration-ms="4690" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:52 WEST" name="login" finished-at="2025-12-25T10:38:55 WEST" duration-ms="3163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testConversationsListVisible()[pri:2, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:26 WEST" name="testConversationsListVisible" description="Verify conversations list visibility" finished-at="2025-12-22T19:13:39 WEST" duration-ms="12631" status="PASS">
+        <test-method signature="testConversationsListVisible()[pri:2, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:55 WEST" name="testConversationsListVisible" description="Verify conversations list visibility" finished-at="2025-12-25T10:38:58 WEST" duration-ms="2249" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testConversationsListVisible -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:39 WEST" name="tearDown" finished-at="2025-12-22T19:13:39 WEST" duration-ms="180" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:58 WEST" name="tearDown" finished-at="2025-12-25T10:38:58 WEST" duration-ms="276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:39 WEST" name="setUp" finished-at="2025-12-22T19:13:39 WEST" duration-ms="739" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:58 WEST" name="setUp" finished-at="2025-12-25T10:38:59 WEST" duration-ms="1064" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:39 WEST" name="login" finished-at="2025-12-22T19:13:43 WEST" duration-ms="3566" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:38:59 WEST" name="login" finished-at="2025-12-25T10:39:02 WEST" duration-ms="3221" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testConversationCount()[pri:3, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:43 WEST" name="testConversationCount" description="Verify conversation count" finished-at="2025-12-22T19:13:45 WEST" duration-ms="2090" status="PASS">
+        <test-method signature="testConversationCount()[pri:3, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:02 WEST" name="testConversationCount" description="Verify conversation count" finished-at="2025-12-25T10:39:14 WEST" duration-ms="12203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testConversationCount -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:45 WEST" name="tearDown" finished-at="2025-12-22T19:13:45 WEST" duration-ms="111" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:14 WEST" name="tearDown" finished-at="2025-12-25T10:39:15 WEST" duration-ms="318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:45 WEST" name="setUp" finished-at="2025-12-22T19:13:46 WEST" duration-ms="652" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:15 WEST" name="setUp" finished-at="2025-12-25T10:39:16 WEST" duration-ms="1163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:46 WEST" name="login" finished-at="2025-12-22T19:13:49 WEST" duration-ms="3592" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:16 WEST" name="login" finished-at="2025-12-25T10:39:20 WEST" duration-ms="4202" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testSearchFunctionality()[pri:4, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:13:49 WEST" name="testSearchFunctionality" description="Verify search functionality" finished-at="2025-12-22T19:14:02 WEST" duration-ms="12126" status="PASS">
+        <test-method signature="testSearchFunctionality()[pri:4, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:20 WEST" name="testSearchFunctionality" description="Verify search functionality" finished-at="2025-12-25T10:39:32 WEST" duration-ms="12228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:02 WEST" name="tearDown" finished-at="2025-12-22T19:14:03 WEST" duration-ms="1077" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:32 WEST" name="tearDown" finished-at="2025-12-25T10:39:33 WEST" duration-ms="320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:03 WEST" name="setUp" finished-at="2025-12-22T19:14:03 WEST" duration-ms="662" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:33 WEST" name="setUp" finished-at="2025-12-25T10:39:34 WEST" duration-ms="1066" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:03 WEST" name="login" finished-at="2025-12-22T19:14:08 WEST" duration-ms="4603" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:34 WEST" name="login" finished-at="2025-12-25T10:39:37 WEST" duration-ms="3730" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testConversationSelection()[pri:5, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:08 WEST" name="testConversationSelection" description="Verify conversation selection" finished-at="2025-12-22T19:14:21 WEST" duration-ms="13188" status="PASS">
+        <test-method signature="testConversationSelection()[pri:5, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:37 WEST" name="testConversationSelection" description="Verify conversation selection" finished-at="2025-12-25T10:39:50 WEST" duration-ms="12218" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testConversationSelection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:21 WEST" name="tearDown" finished-at="2025-12-22T19:14:21 WEST" duration-ms="134" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:50 WEST" name="tearDown" finished-at="2025-12-25T10:39:50 WEST" duration-ms="280" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:21 WEST" name="setUp" finished-at="2025-12-22T19:14:22 WEST" duration-ms="784" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:50 WEST" name="setUp" finished-at="2025-12-25T10:39:51 WEST" duration-ms="1062" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:22 WEST" name="login" finished-at="2025-12-22T19:14:26 WEST" duration-ms="3550" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:51 WEST" name="login" finished-at="2025-12-25T10:39:54 WEST" duration-ms="3452" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testExportHistory()[pri:6, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:26 WEST" name="testExportHistory" description="Verify export history functionality" finished-at="2025-12-22T19:14:38 WEST" duration-ms="12099" status="PASS">
+        <test-method signature="testExportHistory()[pri:6, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:39:54 WEST" name="testExportHistory" description="Verify export history functionality" finished-at="2025-12-25T10:40:21 WEST" duration-ms="27097" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExportHistory -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:38 WEST" name="tearDown" finished-at="2025-12-22T19:14:38 WEST" duration-ms="134" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:21 WEST" name="tearDown" finished-at="2025-12-25T10:40:22 WEST" duration-ms="344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:38 WEST" name="setUp" finished-at="2025-12-22T19:14:38 WEST" duration-ms="644" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:22 WEST" name="setUp" finished-at="2025-12-25T10:40:23 WEST" duration-ms="1045" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:38 WEST" name="login" finished-at="2025-12-22T19:14:41 WEST" duration-ms="2949" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:23 WEST" name="login" finished-at="2025-12-25T10:40:27 WEST" duration-ms="4047" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testFilterOptions()[pri:7, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:41 WEST" name="testFilterOptions" description="Verify filter options presence" finished-at="2025-12-22T19:14:54 WEST" duration-ms="12128" status="PASS">
+        <test-method signature="testFilterOptions()[pri:7, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:27 WEST" name="testFilterOptions" description="Verify filter options presence" finished-at="2025-12-25T10:40:39 WEST" duration-ms="12259" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterOptions -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:54 WEST" name="tearDown" finished-at="2025-12-22T19:14:54 WEST" duration-ms="150" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:39 WEST" name="tearDown" finished-at="2025-12-25T10:40:39 WEST" duration-ms="331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:54 WEST" name="setUp" finished-at="2025-12-22T19:14:54 WEST" duration-ms="717" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:39 WEST" name="setUp" finished-at="2025-12-25T10:40:41 WEST" duration-ms="1204" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:54 WEST" name="login" finished-at="2025-12-22T19:14:57 WEST" duration-ms="3022" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:41 WEST" name="login" finished-at="2025-12-25T10:40:44 WEST" duration-ms="3238" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testCorrectURL()[pri:8, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:57 WEST" name="testCorrectURL" description="Verify page URL is correct" finished-at="2025-12-22T19:14:58 WEST" duration-ms="122" status="PASS">
+        <test-method signature="testCorrectURL()[pri:8, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:44 WEST" name="testCorrectURL" description="Verify page URL is correct" finished-at="2025-12-25T10:40:44 WEST" duration-ms="199" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCorrectURL -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-22T19:14:58 WEST" name="tearDown" finished-at="2025-12-22T19:14:58 WEST" duration-ms="127" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.HistoryTest@1bb5a082]" started-at="2025-12-25T10:40:44 WEST" name="tearDown" finished-at="2025-12-25T10:40:44 WEST" duration-ms="251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.example.tests.HistoryTest -->
     </test> <!-- History Tests -->
-    <test started-at="2025-12-22T19:14:58 WEST" name="Settings Tests" finished-at="2025-12-22T19:18:13 WEST" duration-ms="194997">
+    <test started-at="2025-12-25T10:40:44 WEST" name="Settings Tests" finished-at="2025-12-25T10:44:14 WEST" duration-ms="209957">
       <class name="com.example.tests.SettingsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:14:58 WEST" name="setUp" finished-at="2025-12-22T19:14:58 WEST" duration-ms="711" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:40:44 WEST" name="setUp" finished-at="2025-12-25T10:40:45 WEST" duration-ms="1065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:14:58 WEST" name="login" finished-at="2025-12-22T19:15:02 WEST" duration-ms="3404" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:40:45 WEST" name="login" finished-at="2025-12-25T10:40:49 WEST" duration-ms="3684" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testSettingsPageLoads()[pri:1, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:02 WEST" name="testSettingsPageLoads" description="Verify settings page loads successfully" finished-at="2025-12-22T19:15:02 WEST" duration-ms="110" status="PASS">
+        <test-method signature="testSettingsPageLoads()[pri:1, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:40:49 WEST" name="testSettingsPageLoads" description="Verify settings page loads successfully" finished-at="2025-12-25T10:41:04 WEST" duration-ms="15102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSettingsPageLoads -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:02 WEST" name="tearDown" finished-at="2025-12-22T19:15:02 WEST" duration-ms="111" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:04 WEST" name="tearDown" finished-at="2025-12-25T10:41:05 WEST" duration-ms="265" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:02 WEST" name="setUp" finished-at="2025-12-22T19:15:03 WEST" duration-ms="657" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:05 WEST" name="setUp" finished-at="2025-12-25T10:41:06 WEST" duration-ms="1065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:03 WEST" name="login" finished-at="2025-12-22T19:15:07 WEST" duration-ms="4360" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:06 WEST" name="login" finished-at="2025-12-25T10:41:09 WEST" duration-ms="3174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testSettingsTabsPresent()[pri:2, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:07 WEST" name="testSettingsTabsPresent" description="Verify settings tabs are present" finished-at="2025-12-22T19:15:19 WEST" duration-ms="12114" status="PASS">
+        <test-method signature="testSettingsTabsPresent()[pri:2, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:09 WEST" name="testSettingsTabsPresent" description="Verify settings tabs are present" finished-at="2025-12-25T10:41:21 WEST" duration-ms="12158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSettingsTabsPresent -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:19 WEST" name="tearDown" finished-at="2025-12-22T19:15:19 WEST" duration-ms="149" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:21 WEST" name="tearDown" finished-at="2025-12-25T10:41:21 WEST" duration-ms="308" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:19 WEST" name="setUp" finished-at="2025-12-22T19:15:20 WEST" duration-ms="721" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:21 WEST" name="setUp" finished-at="2025-12-25T10:41:22 WEST" duration-ms="1181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:20 WEST" name="login" finished-at="2025-12-22T19:15:23 WEST" duration-ms="3436" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:22 WEST" name="login" finished-at="2025-12-25T10:41:26 WEST" duration-ms="3253" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testProfileTab()[pri:3, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:23 WEST" name="testProfileTab" description="Verify profile tab functionality" finished-at="2025-12-22T19:15:37 WEST" duration-ms="13093" status="PASS">
+        <test-method signature="testProfileTab()[pri:3, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:26 WEST" name="testProfileTab" description="Verify profile tab functionality" finished-at="2025-12-25T10:41:39 WEST" duration-ms="13249" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProfileTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:37 WEST" name="tearDown" finished-at="2025-12-22T19:15:37 WEST" duration-ms="140" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:39 WEST" name="tearDown" finished-at="2025-12-25T10:41:39 WEST" duration-ms="323" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:37 WEST" name="setUp" finished-at="2025-12-22T19:15:37 WEST" duration-ms="705" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:39 WEST" name="setUp" finished-at="2025-12-25T10:41:40 WEST" duration-ms="1211" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:37 WEST" name="login" finished-at="2025-12-22T19:15:41 WEST" duration-ms="3878" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:40 WEST" name="login" finished-at="2025-12-25T10:41:44 WEST" duration-ms="3410" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testSecurityTab()[pri:4, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:41 WEST" name="testSecurityTab" description="Verify security tab functionality" finished-at="2025-12-22T19:15:54 WEST" duration-ms="13125" status="PASS">
+        <test-method signature="testSecurityTab()[pri:4, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:44 WEST" name="testSecurityTab" description="Verify security tab functionality" finished-at="2025-12-25T10:41:57 WEST" duration-ms="13165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSecurityTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:54 WEST" name="tearDown" finished-at="2025-12-22T19:15:55 WEST" duration-ms="155" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:57 WEST" name="tearDown" finished-at="2025-12-25T10:41:57 WEST" duration-ms="379" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:55 WEST" name="setUp" finished-at="2025-12-22T19:15:55 WEST" duration-ms="639" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:57 WEST" name="setUp" finished-at="2025-12-25T10:41:58 WEST" duration-ms="1092" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:55 WEST" name="login" finished-at="2025-12-22T19:15:58 WEST" duration-ms="3033" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:41:58 WEST" name="login" finished-at="2025-12-25T10:42:02 WEST" duration-ms="3785" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testNotificationsTab()[pri:5, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:15:58 WEST" name="testNotificationsTab" description="Verify notifications tab functionality" finished-at="2025-12-22T19:16:11 WEST" duration-ms="13097" status="PASS">
+        <test-method signature="testNotificationsTab()[pri:5, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:02 WEST" name="testNotificationsTab" description="Verify notifications tab functionality" finished-at="2025-12-25T10:42:15 WEST" duration-ms="13168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNotificationsTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:11 WEST" name="tearDown" finished-at="2025-12-22T19:16:11 WEST" duration-ms="140" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:15 WEST" name="tearDown" finished-at="2025-12-25T10:42:16 WEST" duration-ms="360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:11 WEST" name="setUp" finished-at="2025-12-22T19:16:12 WEST" duration-ms="703" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:16 WEST" name="setUp" finished-at="2025-12-25T10:42:17 WEST" duration-ms="1059" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:12 WEST" name="login" finished-at="2025-12-22T19:16:16 WEST" duration-ms="4332" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:17 WEST" name="login" finished-at="2025-12-25T10:42:20 WEST" duration-ms="3271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testPreferencesTab()[pri:6, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:16 WEST" name="testPreferencesTab" description="Verify preferences tab functionality" finished-at="2025-12-22T19:16:30 WEST" duration-ms="13125" status="PASS">
+        <test-method signature="testPreferencesTab()[pri:6, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:20 WEST" name="testPreferencesTab" description="Verify preferences tab functionality" finished-at="2025-12-25T10:42:33 WEST" duration-ms="13158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPreferencesTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:30 WEST" name="tearDown" finished-at="2025-12-22T19:16:30 WEST" duration-ms="154" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:33 WEST" name="tearDown" finished-at="2025-12-25T10:42:34 WEST" duration-ms="347" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:30 WEST" name="setUp" finished-at="2025-12-22T19:16:31 WEST" duration-ms="742" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:34 WEST" name="setUp" finished-at="2025-12-25T10:42:35 WEST" duration-ms="1307" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:31 WEST" name="login" finished-at="2025-12-22T19:16:34 WEST" duration-ms="3948" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:35 WEST" name="login" finished-at="2025-12-25T10:42:39 WEST" duration-ms="3664" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testLanguageSelection()[pri:7, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:34 WEST" name="testLanguageSelection" description="Verify language selection" finished-at="2025-12-22T19:16:58 WEST" duration-ms="23152" status="PASS">
+        <test-method signature="testLanguageSelection()[pri:7, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:42:39 WEST" name="testLanguageSelection" description="Verify language selection" finished-at="2025-12-25T10:43:02 WEST" duration-ms="23234" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLanguageSelection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:58 WEST" name="tearDown" finished-at="2025-12-22T19:16:58 WEST" duration-ms="164" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:43:02 WEST" name="tearDown" finished-at="2025-12-25T10:43:02 WEST" duration-ms="354" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:58 WEST" name="setUp" finished-at="2025-12-22T19:16:58 WEST" duration-ms="655" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:43:02 WEST" name="setUp" finished-at="2025-12-25T10:43:03 WEST" duration-ms="1153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:16:58 WEST" name="login" finished-at="2025-12-22T19:17:03 WEST" duration-ms="4808" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:43:03 WEST" name="login" finished-at="2025-12-25T10:43:07 WEST" duration-ms="3581" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testThemeToggle()[pri:8, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:17:03 WEST" name="testThemeToggle" description="Verify theme toggle" finished-at="2025-12-22T19:17:26 WEST" duration-ms="23116" status="PASS">
+        <test-method signature="testThemeToggle()[pri:8, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:43:07 WEST" name="testThemeToggle" description="Verify theme toggle" finished-at="2025-12-25T10:43:30 WEST" duration-ms="23255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testThemeToggle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:17:26 WEST" name="tearDown" finished-at="2025-12-22T19:17:26 WEST" duration-ms="135" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:43:30 WEST" name="tearDown" finished-at="2025-12-25T10:43:31 WEST" duration-ms="333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:17:26 WEST" name="setUp" finished-at="2025-12-22T19:17:27 WEST" duration-ms="673" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:43:31 WEST" name="setUp" finished-at="2025-12-25T10:43:32 WEST" duration-ms="1190" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:17:27 WEST" name="login" finished-at="2025-12-22T19:17:32 WEST" duration-ms="4760" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:43:32 WEST" name="login" finished-at="2025-12-25T10:43:35 WEST" duration-ms="3207" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testNotificationToggles()[pri:9, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:17:32 WEST" name="testNotificationToggles" description="Verify notification toggles" finished-at="2025-12-22T19:18:06 WEST" duration-ms="33674" status="PASS">
+        <test-method signature="testNotificationToggles()[pri:9, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:43:35 WEST" name="testNotificationToggles" description="Verify notification toggles" finished-at="2025-12-25T10:44:09 WEST" duration-ms="33744" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNotificationToggles -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:18:06 WEST" name="tearDown" finished-at="2025-12-22T19:18:06 WEST" duration-ms="152" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:44:09 WEST" name="tearDown" finished-at="2025-12-25T10:44:09 WEST" duration-ms="364" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:18:06 WEST" name="setUp" finished-at="2025-12-22T19:18:06 WEST" duration-ms="721" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:44:09 WEST" name="setUp" finished-at="2025-12-25T10:44:10 WEST" duration-ms="1112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:18:06 WEST" name="login" finished-at="2025-12-22T19:18:12 WEST" duration-ms="6009" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:44:10 WEST" name="login" finished-at="2025-12-25T10:44:14 WEST" duration-ms="3789" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="testCorrectURL()[pri:10, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:18:12 WEST" name="testCorrectURL" description="Verify page URL is correct" finished-at="2025-12-22T19:18:13 WEST" duration-ms="73" status="PASS">
+        <test-method signature="testCorrectURL()[pri:10, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:44:14 WEST" name="testCorrectURL" description="Verify page URL is correct" finished-at="2025-12-25T10:44:14 WEST" duration-ms="174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCorrectURL -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-22T19:18:13 WEST" name="tearDown" finished-at="2025-12-22T19:18:13 WEST" duration-ms="112" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.SettingsTest@2d3379b4]" started-at="2025-12-25T10:44:14 WEST" name="tearDown" finished-at="2025-12-25T10:44:14 WEST" duration-ms="235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
